@@ -1,24 +1,29 @@
+//- Based on https://github.com/h5bp/html5-boilerplate/blob/master/dist/index.html
+mixin ie(condition)
+    | <!--[!{condition}]>
+    block
+    | <![endif]-->
+
+
 doctype html
 html(lang='en')
     head
-        //- Based on https://github.com/h5bp/html5-boilerplate/blob/master/dist/index.html
         meta(charset='utf-8')
         meta(http-equiv='x-ua-compatible', content='ie=edge')
         meta(name='viewport', content='width=device-width, initial-scale=1')
         
-        title Pedro Pinto
-        meta(name='description', content='Type your description here')
+        title Pedro Pinto • Web Designer &amp; Developer from Portugal
+        meta(name='description', content='My name is Pedro Pinto and I’m a Web Designer + Developer from Portugal, currently working at Doist.')
         
         link(rel='apple-touch-icon', href='apple-touch-icon.png')
         link(rel='stylesheet', href='assets/css/main.css')
     
     body
-        //if lte IE 10
-            p.browserupgrade
-                | You are using an outdated browser. Please #[a(href='http://browsehappy.com/') upgrade your browser] to improve your experience and security.
-        
+        +ie('if lt IE 10')
+            .browserupgrade You are using an outdated browser. Please #[a(href='http://browsehappy.com/') upgrade your browser] to improve your experience and security.
+
         .container
-            p Hello world! This is HTML5 Boilerplate.
+            h1 Hello world!
 
         script(src='assets/js/main.min.js')
 

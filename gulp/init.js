@@ -29,7 +29,7 @@ gulp.task('init', function() {
 
     var files = [
         { name: 'development/assets/css/imports/variables.less', contents: '// COLORS\n@color: #654321;' },
-        { name: 'development/assets/css/styles.less', contents: '@import \'imports/variables\';\n\nh1 {\n    background-color: @color;\n}' },
+        { name: 'development/assets/css/styles.less', contents: '@import \'imports/variables\';\n\nh1 {\n    color: @color;\n}' },
         { name: 'development/assets/js/main.js', contents: 'var utils = require(\'./utils\');\n\nutils.log(\'Testing 123...\');' },
         { name: 'development/assets/js/utils.js', contents: 'module.exports = {\n    log: (str) => {\n        console.log(\'-->\', str);\n    }\n}' },
         { name: 'development/index.jade', contents: 'html_boilerplate // Press tab' },
