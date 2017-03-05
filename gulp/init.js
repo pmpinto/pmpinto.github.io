@@ -13,10 +13,10 @@ gulp.task('init', function() {
         'development/assets/css/imports',
         'development/assets/img',
         'development/assets/js',
-        'production/assets',
-        'production/assets/css',
-        'production/assets/img',
-        'production/assets/js'
+        'assets',
+        'assets/css',
+        'assets/img',
+        'assets/js'
     ];
 
     for (var folder of folders) {

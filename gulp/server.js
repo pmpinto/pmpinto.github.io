@@ -4,7 +4,7 @@ var gulp        = require('gulp'),
 var configs = {
     port: 3010, // UI will run on 3011, make sure to increment by 10 on each project
     project: 'pedropinto.me',
-    dir: './production'
+    dir: './'
 };
 
 // Browsersync server
@@ -22,6 +22,6 @@ gulp.task('server', function() {
 
     // Live reload
     gulp.watch("./*.html").on('change', browserSync.reload);
-    gulp.watch("production/assets/css/*.css").on('change', browserSync.reload);
-    gulp.watch("production/assets/js/main.min.js").on('change', browserSync.reload);
+    gulp.watch("assets/css/*.css").on('change', browserSync.reload);
+    gulp.watch("assets/js/main.min.js").on('change', browserSync.reload);
 });

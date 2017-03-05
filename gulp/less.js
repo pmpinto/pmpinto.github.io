@@ -7,7 +7,7 @@ var gulp         = require('gulp'),
 
 var configs = {
     src: 'development/assets/css/*.less',
-    dest: 'production/assets/css/',
+    dest: 'assets/css/',
     imports: 'development/assets/css/imports'
 };
 

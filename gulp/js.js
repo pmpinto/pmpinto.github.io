@@ -8,7 +8,7 @@ var gulp       = require('gulp'),
 
 var configs = {
     src: 'development/assets/js/main.js',
-    dest: 'production/assets/js/',
+    dest: 'assets/js/',
     minName: 'main.min.js'
 };
 configs.browserifyOptions = {

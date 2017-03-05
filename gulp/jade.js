@@ -6,7 +6,7 @@ var gulp   = require('gulp'),
 
 var configs = {
     src: 'development/*.jade',
-    dest: 'production/'
+    dest: './'
 };
 configs.jadeOptions = {
     pretty: false
