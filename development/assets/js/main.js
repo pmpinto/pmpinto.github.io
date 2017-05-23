@@ -11,12 +11,10 @@
 
     // FUNCTIONS
     const toggleNightMode = (element) => {
-        if (element.classList) { // <- confirm if this is needed on caniuse.com
-            if (element.classList.contains('night-mode')) {
-                element.classList.remove('night-mode');
-            } else {
-                element.classList.add('night-mode');
-            }
+        if (element.classList.contains('night-mode')) {
+            element.classList.remove('night-mode');
+        } else {
+            element.classList.add('night-mode');
         }
     };
 
@@ -26,7 +24,6 @@
         toggleNightMode(this.elements.body);
     }, false);
 
-    // for (let toggle of this.elements.toggles) { <- find out why this is not working in Safari
     for (var i = this.elements.toggles.length - 1; i >= 0; i--) {
         this.elements.toggles[i].addEventListener('click', (event) => {
             event.preventDefault();
