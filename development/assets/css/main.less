@@ -1,6 +1,320 @@
-@import 'node_modules/normalize.less/normalize.less';
+@import 'node_modules/normalize.less/normalize'; // <- take a look at reset css instead of normalize
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,800');
+
 @import 'imports/variables';
 
-h1 {
-    color: @color;
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    font-family: @sans-serif;
+
+    &.night-mode {
+        @text-color: #ffffff;
+
+        .logo {
+            background-color: @brand-color;
+            background-image: url('../img/logo--white.svg');
+            border: 0;
+            transition: background-color @transition-timing;
+        }
+
+        .content {
+            background-color: @night-bg;
+            transition: background-color @transition-timing;
+        }
+
+        .title,
+        .subtitle {
+            color: @text-color;
+        }
+
+        .text {
+            color: fadeout(@text-color, 20%);
+        }
+
+        .text--muted {
+            color: fadeout(@text-color, 70%);
+        }
+
+        .link {
+            border-color: fadeout(@text-color, 90%);
+
+            &:hover {
+                border-color: fadeout(@brand-color, 70%);
+            }
+        }
+
+        .sm__link--500px {
+            background-image: url('../img/icon-500px--white.svg');
+        }
+
+        .sm__link--lastfm {
+            background-image: url('../img/icon-lastfm--white.svg');
+        }
+
+        .sm__link--dribbble {
+            background-image: url('../img/icon-dribbble--white.svg');
+        }
+
+        .sm__link--github {
+            background-image: url('../img/icon-github--white.svg');
+        }
+
+        .sm__link--twitter {
+            background-image: url('../img/icon-twitter--white.svg');
+        }
+
+        .sm__link--email {
+            background-image: url('../img/icon-email--white.svg');
+        }
+
+        footer {
+            .toggleNight {
+                display: none;
+            }
+
+            .toggleDay {
+                display: block;
+            }
+        }
+    }
+}
+
+// ### TYPE ###
+html {
+    font-size: 13px;
+
+    @media @tablets {
+        font-size: 14px;
+    }
+
+    @media @desktops {
+        font-size: 16px;
+    }
+
+    @media @desktops-hd {
+        font-size: 18px;
+    }
+}
+
+.title {
+    color: @text-color;
+    font-size: 81 / @rem;
+    font-weight: 800;
+    line-height: 1;
+    margin: 0;
+}
+
+.subtitle {
+    color: @text-color;
+    font-size: 24 / @rem;
+    font-weight: 400;
+    line-height: 1.8;
+
+    @media @tablets {
+        line-height: 1.6;
+    }
+
+    @media @desktops {
+        line-height: 1.5;
+    }
+}
+
+.text {
+    color: fadeout(@text-color, 20%);
+    font-size: 18 / @rem;
+    font-weight: 400;
+    line-height: 1.8;
+    margin-bottom: 1.8rem;
+    margin-top: 1.8rem;
+
+    @media @desktops {
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+        margin-top: 1.5rem;
+    }
+}
+
+.text--muted {
+    color: fadeout(@text-color, 70%);
+    font-size: 12 / @rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.link {
+    border-bottom: 1px solid fadeout(@text-color, 70%);
+    color: inherit;
+    text-decoration: none;
+    transition: border-color @transition-end-timing, color @transition-end-timing;
+
+    &:hover {
+        border-color: fadeout(@brand-color, 70%);
+        color: @brand-color;
+        transition: border-color @transition-timing, color @transition-timing;
+    }
+}
+
+footer .link {
+    border-color: fadeout(@text-color, 90%);
+}
+
+
+
+.container {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+
+    @media @desktops {
+        height: 100%;
+        position: relative;
+    }
+}
+
+.logo {
+    background-color: #ffffff;
+    background-image: url('../img/logo.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 15vw;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+    min-height: 100vw / 1.618;
+    overflow: hidden;
+    text-indent: -9999px;
+    transition: background-color @transition-end-timing;
+    z-index: 100;
+
+    @media @desktops {
+        border-right: 1px solid rgba(0, 0, 0, 0.05);
+        height: 100%;
+        left: 0;
+        min-height: auto;
+        max-height: 100vh;
+        padding: 8%;
+        position: fixed;
+        top: 0;
+        width: 50%;
+    }
+}
+
+.content {
+    padding: 8vw;
+    padding-bottom: 3vw;
+    transition: background-color @transition-end-timing;
+
+    @media @tablets {
+        padding: 15vw;
+        padding-bottom: 6vw;
+    }
+
+    @media @desktops {
+        align-self: flex-end;
+        min-height: 100vh;
+        padding: 8vw;
+        padding-bottom: 3vw;
+        width: 50%;
+    }
+}
+
+.sm {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100 / @rem;
+    padding: 0;
+
+    @media @tablets {
+        width: 70%;
+        margin: 0 auto;
+        margin-top: 150 / @rem;
+    }
+
+    @media @desktops {
+        width: 100%;
+        justify-content: center;
+        margin-top: 175 / @rem;
+    }
+
+    @media @desktops-hd {
+        margin-top: 225 / @rem;
+    }
+}
+
+.sm__item {
+    list-style: none;
+    overflow: hidden;
+    text-indent: -999px;
+}
+
+.sm__link {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto (24 / @rem);
+    display: block;
+    height: 26 / @rem;
+    margin: 0 (12 / @rem);
+    opacity: .5;
+    transition: opacity @transition-end-timing;
+    width: 26 / @rem;
+
+    &:hover {
+        opacity: 1;
+        transition: opacity @transition-timing;
+    }
+}
+
+.sm__link--500px {
+    background-image: url('../img/icon-500px.svg');
+}
+
+.sm__link--lastfm {
+    background-image: url('../img/icon-lastfm.svg');
+}
+
+.sm__link--dribbble {
+    background-image: url('../img/icon-dribbble.svg');
+}
+
+.sm__link--github {
+    background-image: url('../img/icon-github.svg');
+}
+
+.sm__link--twitter {
+    background-image: url('../img/icon-twitter.svg');
+}
+
+.sm__link--email {
+    background-image: url('../img/icon-email.svg');
+}
+
+footer {
+    margin-top: 22 / @rem;
+    text-align: center;
+
+    .toggleNight {
+        display: block;
+    }
+
+    .toggleDay {
+        display: none;
+    }
+
+    p {
+        margin: (7 / @rem) 0;
+    }
+}
+
+.footer__spacer {
+    padding: 0 (5 / @rem);
 }
