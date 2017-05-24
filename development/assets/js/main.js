@@ -5,8 +5,11 @@
     this.elements = {
         body: document.querySelector('body'),
         logo: document.querySelector('.logo'),
-        toggles: document.getElementsByClassName('js-toggleNightMode')
+        toggles: document.getElementsByClassName('js-toggleNightMode'),
+        emailLink: document.querySelector('.sm__link--email')
     };
+
+    const domain = 'pedropinto.me';
 
 
     // FUNCTIONS
@@ -16,6 +19,10 @@
         } else {
             element.classList.add('night-mode');
         }
+    };
+
+    const updateEmailLink = (element) => {
+        element.setAttribute('href', 'mailto:pedro@' + domain);
     };
 
 
@@ -36,5 +43,7 @@
     if (now.getHours() >= 20 || now.getHours() <= 7) {
         toggleNightMode(this.elements.body);
     }
+
+    updateEmailLink(this.elements.emailLink);
 
 })();
