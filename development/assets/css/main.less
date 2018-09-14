@@ -16,15 +16,22 @@ body {
 
 body {
     font-family: @sans-serif;
+    transition: background-color @transition-end-timing;
 
     &.night-mode {
-        @text-color: #ffffff;
+        @text-color: @white;
+        background-color: @night-bg;
+        transition: background-color @transition-timing;
 
         .logo {
             background-color: @brand-color;
-            background-image: url('../img/logo--white.svg');
             border: 0;
             transition: background-color @transition-timing;
+
+            svg {
+                color: @white;
+                transition: fill @transition-timing;
+            }
         }
 
         .content {
@@ -53,28 +60,8 @@ body {
             }
         }
 
-        .sm__link--500px {
-            background-image: url('../img/icon-500px--white.svg');
-        }
-
-        .sm__link--lastfm {
-            background-image: url('../img/icon-lastfm--white.svg');
-        }
-
-        .sm__link--dribbble {
-            background-image: url('../img/icon-dribbble--white.svg');
-        }
-
-        .sm__link--github {
-            background-image: url('../img/icon-github--white.svg');
-        }
-
-        .sm__link--twitter {
-            background-image: url('../img/icon-twitter--white.svg');
-        }
-
-        .sm__link--email {
-            background-image: url('../img/icon-email--white.svg');
+        .sm__link {
+            color: @white;
         }
 
         footer {
@@ -171,7 +158,7 @@ footer .link {
 
 
 .container {
-    background-color: #ffffff;
+    background-color: @white;
     display: flex;
     flex-direction: column;
 
@@ -182,11 +169,7 @@ footer .link {
 }
 
 .logo {
-    background-color: #ffffff;
-    background-image: url('../img/logo.svg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 15vw;
+    background-color: @white;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     box-sizing: border-box;
     min-height: 100vw / 1.618;
@@ -194,6 +177,14 @@ footer .link {
     text-indent: -9999px;
     transition: background-color @transition-end-timing;
     z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        color: @brand-color;
+        width: 15vw;
+    }
 
     @media @desktops {
         border-right: 1px solid rgba(0, 0, 0, 0.05);
@@ -258,44 +249,24 @@ footer .link {
 }
 
 .sm__link {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: auto (24 / @rem);
-    display: block;
-    height: 26 / @rem;
     margin: 0 (12 / @rem);
     opacity: .5;
     transition: opacity @transition-end-timing;
-    width: 26 / @rem;
+    color: @icon-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        height: 26 / @rem;
+        width: 26 / @rem;
+        display: block;
+    }
 
     &:hover {
         opacity: 1;
         transition: opacity @transition-timing;
     }
-}
-
-.sm__link--500px {
-    background-image: url('../img/icon-500px.svg');
-}
-
-.sm__link--lastfm {
-    background-image: url('../img/icon-lastfm.svg');
-}
-
-.sm__link--dribbble {
-    background-image: url('../img/icon-dribbble.svg');
-}
-
-.sm__link--github {
-    background-image: url('../img/icon-github.svg');
-}
-
-.sm__link--twitter {
-    background-image: url('../img/icon-twitter.svg');
-}
-
-.sm__link--email {
-    background-image: url('../img/icon-email.svg');
 }
 
 footer {
@@ -317,4 +288,56 @@ footer {
 
 .footer__spacer {
     padding: 0 (5 / @rem);
+}
+
+
+
+// Hire me
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-160 / @rem);
+    }
+
+    to {
+        transform: translateY(30 / @rem);
+    }
+}
+
+
+.hireme_cta {
+    animation-delay: 2s;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+    animation-name: slideDown;
+    background-color: lighten(@text-color, 83%);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 3px 10px rgba(0, 0, 0, 0.1), 0 5px 100px rgba(0, 0, 0, 0.1);
+    color: fadeout(@text-color, 20%);
+    font-size: 12px;
+    left: 5vw;
+    line-height: 1.5;
+    padding: 1em;
+    padding-top: 1.1em;
+    position: fixed;
+    text-align: center;
+    transform: translateY(-160 / @rem);
+    width: 90vw;
+    z-index: 1000;
+
+    @media @tablets {
+        left: 15vw;
+        width: 70vw;
+
+        br {
+            display: none;
+        }
+    }
+
+    @media @desktops {
+        font-size: 14px;
+        width: 50vw;
+        left: 25vw;
+    }
 }

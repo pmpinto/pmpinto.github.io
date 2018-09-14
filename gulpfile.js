@@ -1,15 +1,22 @@
-var gulp = require('gulp');
+const gulp = require("gulp")
+const HubRegistry = require("gulp-hub")
 
-// Default task
-// -> gulp
-gulp.task('default', ['less', 'js', 'jade', 'watch']);
+const hub = new HubRegistry(["./gulp/*.js"])
+gulp.registry(hub)
+
+/**
+ * Watch for changes on asset files and recompile them
+ */
+const watch = () => {
+    gulp.watch("development/assets/css/*.less", gulp.series("less"))
+    gulp.watch("development/assets/js/*.js", gulp.series("js"))
+    gulp.watch("development/*.jade", gulp.series("jadeWatch"))
+}
 
 // Watch task
 // -> gulp watch
-gulp.task('watch', function() {
-    gulp.watch('development/assets/css/*.less', ['less']);
-    gulp.watch('development/assets/js/*.js', ['js']);
-    gulp.watch('development/*.jade', ['jade:watch']);
-});
+gulp.task("watch", watch)
 
-require('require-dir')('./gulp');
+// Default task
+// -> gulp
+gulp.task("default", gulp.series("less", "js", "jade", "watch"))

@@ -1,49 +1,55 @@
-(() => {
+;(() => {
     // SETUP
-    let now = new Date();
+    let now = new Date()
 
-    this.elements = {
-        body: document.querySelector('body'),
-        logo: document.querySelector('.logo'),
-        toggles: document.getElementsByClassName('js-toggleNightMode'),
-        emailLink: document.querySelector('.sm__link--email')
-    };
-
-    const domain = 'pedropinto.me';
-
-
-    // FUNCTIONS
-    const toggleNightMode = (element) => {
-        if (element.classList.contains('night-mode')) {
-            element.classList.remove('night-mode');
-        } else {
-            element.classList.add('night-mode');
-        }
-    };
-
-    const updateEmailLink = (element) => {
-        element.setAttribute('href', 'mailto:pedro@' + domain);
-    };
-
-
-    // EVENTS
-    this.elements.logo.addEventListener('dblclick', () => {
-        toggleNightMode(this.elements.body);
-    }, false);
-
-    for (var i = this.elements.toggles.length - 1; i >= 0; i--) {
-        this.elements.toggles[i].addEventListener('click', (event) => {
-            event.preventDefault();
-            toggleNightMode(this.elements.body);
-        }, false);
+    const elements = {
+        body: document.querySelector("body"),
+        logo: document.querySelector(".logo"),
+        toggles: document.getElementsByClassName("js-toggleNightMode"),
+        emailLinks: document.querySelectorAll(".js-email")
     }
 
+    const domain = "pedropinto.me"
+
+    // FUNCTIONS
+    const toggleNightMode = element => {
+        if (element.classList.contains("night-mode")) {
+            element.classList.remove("night-mode")
+        } else {
+            element.classList.add("night-mode")
+        }
+    }
+
+    const updateEmailLink = element => {
+        element.setAttribute("href", "mailto:pedro@" + domain)
+    }
+
+    // EVENTS
+    elements.logo.addEventListener(
+        "dblclick",
+        () => {
+            toggleNightMode(elements.body)
+        },
+        false
+    )
+
+    Array.from(elements.toggles).map(toggle => {
+        toggle.addEventListener(
+            "click",
+            event => {
+                event.preventDefault()
+                toggleNightMode(elements.body)
+            },
+            false
+        )
+    })
 
     // RUNTIME
     if (now.getHours() >= 20 || now.getHours() <= 7) {
-        toggleNightMode(this.elements.body);
+        toggleNightMode(elements.body)
     }
 
-    updateEmailLink(this.elements.emailLink);
-
-})();
+    Array.from(elements.emailLinks).map(link => {
+        updateEmailLink(link)
+    })
+})()
