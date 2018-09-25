@@ -25,31 +25,37 @@
     }
 
     // EVENTS
-    elements.logo.addEventListener(
-        "dblclick",
-        () => {
-            toggleNightMode(elements.body)
-        },
-        false
-    )
-
-    Array.from(elements.toggles).map(toggle => {
-        toggle.addEventListener(
-            "click",
-            event => {
-                event.preventDefault()
+    if (elements.logo) {
+        elements.logo.addEventListener(
+            "dblclick",
+            () => {
                 toggleNightMode(elements.body)
             },
             false
         )
-    })
+    }
+
+    if (elements.toggles) {
+        Array.from(elements.toggles).map(toggle => {
+            toggle.addEventListener(
+                "click",
+                event => {
+                    event.preventDefault()
+                    toggleNightMode(elements.body)
+                },
+                false
+            )
+        })
+    }
 
     // RUNTIME
     if (now.getHours() >= 20 || now.getHours() <= 7) {
         toggleNightMode(elements.body)
     }
 
-    Array.from(elements.emailLinks).map(link => {
-        updateEmailLink(link)
-    })
+    if (elements.emailLinks) {
+        Array.from(elements.emailLinks).map(link => {
+            updateEmailLink(link)
+        })
+    }
 })()
