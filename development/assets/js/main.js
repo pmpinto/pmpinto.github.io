@@ -59,11 +59,13 @@
         })
     }
 
-    // HIRE ME ANIMATIONS
-    const wow = new WOW()
-    wow.init()
+    if (elements.body.classList.contains("hireme")) {
+        // HIRE ME ANIMATIONS
+        const wow = new WOW()
+        wow.init()
 
-    setTimeout(function() {
-        window.scrollTo(0, 0) // Fix for when the page is loaded somewhere in the middle/bottom
-    }, 1000);
+        setTimeout(function() {
+            window.scrollTo(0, 0) // Fix for when the page is loaded somewhere in the middle/bottom
+        }, 1000);
+    }
 })()
