@@ -104,6 +104,7 @@ html {
     font-weight: 800;
     line-height: 1;
     margin: 0;
+    cursor: default;
 }
 
 .subtitle {
@@ -111,6 +112,7 @@ html {
     font-size: 24 / @rem;
     font-weight: 400;
     line-height: 1.8;
+    cursor: default;
 
     @media @tablets {
         line-height: 1.6;
@@ -128,6 +130,7 @@ html {
     line-height: 1.8;
     margin-bottom: 1.8rem;
     margin-top: 1.8rem;
+    cursor: default;
 
     @media @desktops {
         line-height: 1.5;
@@ -389,10 +392,6 @@ footer {
 }
 
 // https://github.com/daneden/animate.css/blob/master/source/fading_entrances/fadeInUp.css
-.animated {
-    animation-duration: 1s;
-    animation-fill-mode: both;
-}
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -404,11 +403,30 @@ footer {
         transform: translate3d(0, 0, 0);
     }
 }
+@keyframes fadeOutDown {
+    from {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translate3d(0, 25px, 0);
+    }
+}
 .fadeInUp {
     animation-name: fadeInUp;
 }
-
-.wow { visibility: hidden; }
+.fadeOutDown {
+    animation-name: fadeOutDown;
+}
+.fadeInUp,
+.fadeOutDown {
+    backface-visibility: hidden;
+    will-change: transform;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
 
 .hireme {
     header {

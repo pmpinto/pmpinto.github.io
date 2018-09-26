@@ -41,17 +41,64 @@ html(lang='en')
         .container
             header
                 div
-                    h1.title.wow.fadeInUp(data-wow-delay="3s") Hello!
-                    h2.subtitle.wow.fadeInUp(data-wow-delay="3.1s") I’m #[a.link.js-email(href="#") Pedro], a very calm and focused individual with a love for nature, minimalism and quite places.
-                    p.text.wow.fadeInUp(data-wow-delay="3.2s") I’ve always enjoyed beautiful typography and delightful details that not everyone would notice. As well as setting up my own development tools and having meaningful discussions with engineers. Always trying to learn a few things along the way!
-                    p.text.wow.fadeInUp(data-wow-delay="3.3s") Here’s a bit of my progress over the years and why I believe you should hire me.
+                    h1.title.js-fade.fadeOutDown(data-fade-delay="3000") Hello!
+                    h2.subtitle.js-fade.fadeOutDown(data-fade-delay="3100") I’m #[a.link.js-email(href="#") Pedro], a very calm and focused Front-end Developer with a love for nature, minimalism and quiet places.
+                    p.text.js-fade.fadeOutDown(data-fade-delay="3200") I’ve always enjoyed beautiful typography and delightful details that not everyone would notice. Just as much as setting up my own development tools and having meaningful discussions with engineers. Gotta learn something from who knows best! #[em *wink wink*]
+                    p.text.js-fade.fadeOutDown(data-fade-delay="3300") Here’s a bit of my progress over the years and why I believe you should hire me.
 
             main
+
                 .content
                     div
-                        h1.title.wow.fadeInUp(data-wow-delay="3.6s", data-wow-offset="-1000") 2016
-                        h2.subtitle.wow.fadeInUp(data-wow-delay="3.7s", data-wow-offset="-1000") Front-end Developer at #[a.link(href="https://doist.com/", target="_blank") Doist]
-                        ul.tags.wow.fadeInUp(data-wow-delay="3.8s", data-wow-offset="-1000")
+                        h1.title.js-fade.fadeOutDown(data-fade-delay="3600") 2007
+                        h2.subtitle.js-fade.fadeOutDown(data-fade-delay="3700") Taking an arts/design degree at #[a.link(href="https://esad.pt/", target="_blank") ESAD]
+                        ul.tags.js-fade.fadeOutDown(data-fade-delay="3800")
+                            li Color theory
+                            li Design for displays
+                            li Grids
+                            li Minimalism
+                            li Photography
+                            li Typography
+                            li UI Design
+                        p.text.js-fade.fadeOutDown(data-fade-delay="3900") When I applied for this degree I was already pretty sure what I wanted from it. This gave me an incredible advantage to prioritize where I would spend most of my time.
+                        p.text.js-fade.fadeOutDown(data-fade-delay="4000") Almost all the basic notions I gathered from arts and design and good aesthetics in general come from here.
+                        p.text.js-fade.fadeOutDown(data-fade-delay="4100") And more importantly, learning how to learn and taking a step back, from time to time, has turned out to be an invaluable tool that has stick with me for all these years.
+
+                .content
+                    div
+                        h1.title.js-fade.fadeOutDown(data-fade-delay="100") 2010
+                        h2.subtitle.js-fade.fadeOutDown(data-fade-delay="200") Freelancing
+                        ul.tags.js-fade.fadeOutDown(data-fade-delay="300")
+                            li MySQL
+                            li PHP
+                            li WordPress
+                        p.text.js-fade.fadeOutDown(data-fade-delay="400") In the early days, back when I was still working on my degree, some teachers reached out to me, for both my developer and designer skills.
+                        p.text.js-fade.fadeOutDown(data-fade-delay="500") Some of the projects I’ve worked on during these 6 years never went live and some are already dead. You can take a look at my #[a.link(href="https://dribbble.com/pmpinto", target="_blank") Dribbble] account for #[a.link(href="https://dribbble.com/shots/484196-Gallery-Draggable-items-Rebound", target="_blank") some] #[a.link(href="https://dribbble.com/shots/307512-Header", target="_blank") legacy] #[a.link(href="https://dribbble.com/shots/276975-Submenu", target="_blank") 400px] #[a.link(href="https://dribbble.com/shots/310963-Login-Screen", target="_blank") wide] #[a.link(href="https://dribbble.com/shots/464657-KeepTrack-01", target="_blank") screenshots].
+                        p.text.js-fade.fadeOutDown(data-fade-delay="600") #[a.link(href="http://cl.ly/BZhI/o", target="_blank") MusicSrc] is a personal favorite of mine. It was an exercise where we were requested to implement a working blog and I ended up using WordPress for that.
+
+                .content
+                    div
+                        h1.title.js-fade.fadeOutDown(data-fade-delay="100") 2011
+                        h2.subtitle.js-fade.fadeOutDown(data-fade-delay="200") Designer &amp; Front-end Developer at #[a.link(href="https://esad.pt/", target="_blank") ESAD]
+                        ul.tags.js-fade.fadeOutDown(data-fade-delay="300")
+                            li Adobe Ps/Ai
+                            li Angular JS
+                            li Bootstrap
+                            li CSS3
+                            li HAML
+                            li HTML5
+                            li jQuery
+                            li LESS
+                            li Ruby on Rails
+                        p.text.js-fade.fadeOutDown(data-fade-delay="400") Worked at ESAD for 5 years and was fortunate enough to have had the opportunity to find my first job at the same school I was studying.
+                        p.text.js-fade.fadeOutDown(data-fade-delay="500") I started by working on a #[a.link(href="https://me.esad.pt/en/candidaturas", target="_blank") small online project] to accept applicants online—a great challenge for a newbie like I was. Meanwhile it grew internally into some kind of an intranet for some administrative actions and a place where every student/teacher could interact.
+                        p.text.js-fade.fadeOutDown(data-fade-delay="600") Later we dived into Angular JS v1 and used it on a variety of projects like the website to commemorate #[a.link(href="http://www.designportugues.pt/en", target="_blank") the year of Portuguese design], the most recent #[a.link(href="https://esad.pt/", target="_blank") ESAD]’s website and also #[a.link(href="http://store.esad.pt/en", target="_blank") a store].
+
+                .content
+                    div
+                        h1.title.js-fade.fadeOutDown(data-fade-delay="100") 2016
+                        h2.subtitle.js-fade.fadeOutDown(data-fade-delay="200") Front-end Developer at #[a.link(href="https://doist.com/", target="_blank") Doist]
+                        ul.tags.js-fade.fadeOutDown(data-fade-delay="300")
                             li BEM CSS
                             li Cypress
                             li Git
@@ -64,47 +111,17 @@ html(lang='en')
                             li Python
                             li React/Redux
                             li Sketch
-                        p.text.wow.fadeInUp(data-wow-delay="3.9s", data-wow-offset="-1000") During my 2.5 years at Doist I was mainly focusing on the marketing pages for both #[a.link(href="https://todoist.com/", target="_blank") Todoist] and #[a.link(href="https://twistapp.com/", target="_blank") Twist], as well as #[a.link(href="https://todoist.com/guide/premium", target="_blank") guide pages] and #[a.link(href="https://doist.com/", target="_blank") Doist’s own website]. Translating designs into web pages was one of my major tasks.
-                        p.text.wow.fadeInUp(data-wow-delay="4s", data-wow-offset="-1000") Lately I’ve also been working on the dark theme for Todoist’s web app, having my first contact with a React/Redux environment.
-                        p.text.wow.fadeInUp(data-wow-delay="4.1s", data-wow-offset="-1000") Besides all this, setting up local development tools with Gulp and fixing some bugs for the web app have also kept my heart beating.
+                        p.text.js-fade.fadeOutDown(data-fade-delay="400") During my 2.5 years at Doist I was mainly focusing on the marketing pages for both #[a.link(href="https://todoist.com/", target="_blank") Todoist] and #[a.link(href="https://twistapp.com/", target="_blank") Twist], as well as #[a.link(href="https://todoist.com/guide/premium", target="_blank") guide pages] and #[a.link(href="https://doist.com/", target="_blank") Doist’s own website]. Translating designs into web pages was one of my major tasks.
+                        p.text.js-fade.fadeOutDown(data-fade-delay="500") Lately I’ve also been working on the dark theme for Todoist’s web app, having my first contact with a React/Redux environment.
+                        p.text.js-fade.fadeOutDown(data-fade-delay="600") Besides all this, setting up local development tools with Gulp and fixing some bugs for the web app have also kept my heart beating.
 
                 .content
                     div
-                        h1.title.wow.fadeInUp(data-wow-delay="0.1s") 2011
-                        h2.subtitle.wow.fadeInUp(data-wow-delay="0.2s") Designer &amp; Front-end Developer at #[a.link(href="https://esad.pt/", target="_blank") ESAD]
-                        ul.tags.wow.fadeInUp(data-wow-delay="0.3s")
-                            li Adobe Ps/Ai
-                            li Angular JS
-                            li Bootstrap
-                            li CSS3
-                            li HAML
-                            li HTML5
-                            li jQuery
-                            li LESS
-                            li Ruby on Rails
-                        p.text.wow.fadeInUp(data-wow-delay="0.4s") Worked at ESAD for 5 years and was fortunate enough to have had the opportunity to find my first job at the same school I was studying.
-                        p.text.wow.fadeInUp(data-wow-delay="0.5s") I started by working on a #[a.link(href="https://me.esad.pt/en/candidaturas", target="_blank") small online project] to accept applicants online—a great challenge for a newbie like I was. Meanwhile it grew internally into some kind of an intranet for some administrative actions and a place where every student/teacher could interact.
-                        p.text.wow.fadeInUp(data-wow-delay="0.6s") Later we dived into Angular JS v1 and used it on a variety of projects like the website to commemorate #[a.link(href="http://www.designportugues.pt/en", target="_blank") the year of Portuguese design], the most recent #[a.link(href="https://esad.pt/", target="_blank") ESAD]’s website and also #[a.link(href="http://store.esad.pt/en", target="_blank") a store].
+                        h1.title.js-fade.fadeOutDown(data-fade-delay="100") 2018
+                        h2.subtitle.js-fade.fadeOutDown(data-fade-delay="200") It’s your turn!
+                        p.text.js-fade.fadeOutDown(data-fade-delay="300") Social media handlers can be seen in #[a.link(href="/") the main page], as well as #[a.link.js-email(href="#") my email address]. Let’s do this!
+                        p.text.js-fade.fadeOutDown(data-fade-delay="400") Thanks for your time ❤️
 
-                .content
-                    div
-                        h1.title.wow.fadeInUp(data-wow-delay="0.1s") 2010
-                        h2.subtitle.wow.fadeInUp(data-wow-delay="0.2s") Freelancing
-                        ul.tags.wow.fadeInUp(data-wow-delay="0.3s")
-                            li MySQL
-                            li PHP
-                            li WordPress
-                        p.text.wow.fadeInUp(data-wow-delay="0.4s") In the early days, back when I was still working on my degree, some teachers reached out to me, for both my developer and designer skills.
-                        p.text.wow.fadeInUp(data-wow-delay="0.5s") Some of the projects never went live and some are already dead. You can take a look at my #[a.link(href="https://dribbble.com/pmpinto", target="_blank") Dribbble] account for #[a.link(href="https://dribbble.com/shots/484196-Gallery-Draggable-items-Rebound", target="_blank") some] #[a.link(href="https://dribbble.com/shots/307512-Header", target="_blank") legacy] #[a.link(href="https://dribbble.com/shots/276975-Submenu", target="_blank") 400px] #[a.link(href="https://dribbble.com/shots/310963-Login-Screen", target="_blank") wide] #[a.link(href="https://dribbble.com/shots/464657-KeepTrack-01", target="_blank") screenshots].
-                        p.text.wow.fadeInUp(data-wow-delay="0.6s") #[a.link(href="http://cl.ly/BZhI/o", target="_blank") MusicSrc] is a personal favorite of mine. It was an exercise where we were requested to implement a working blog and I ended up using WordPress.
-
-                .content
-                    div
-                        h1.subtitle.wow.fadeInUp(data-wow-delay="0.1s") So… Let's talk!
-                        p.text.wow.fadeInUp(data-wow-delay="0.3s") Social media handlers can be seen in #[a.link(href="/") the main page], as well as #[a.link.js-email(href="#") my email address].
-                        p.text.wow.fadeInUp(data-wow-delay="0.4s") Thanks for your time ❤️
-
-        script(src='assets/js/libs/wow.min.js')
         script(src='assets/js/main.min.js')
 
         //- Google Analytics
