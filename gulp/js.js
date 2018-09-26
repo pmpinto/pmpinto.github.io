@@ -7,7 +7,7 @@ const uglify = require("gulp-uglify")
 const rename = require("gulp-rename")
 
 const configs = {
-    src: "development/assets/js/main.js",
+    src: "development/assets/js/*.js",
     dest: "assets/js/",
     minName: "main.min.js"
 }
