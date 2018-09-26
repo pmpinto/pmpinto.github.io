@@ -49,8 +49,8 @@
     }
 
     // RUNTIME
-    if (now.getHours() >= 20 || now.getHours() <= 7) {
-        toggleNightMode(elements.body)
+    if ((now.getHours() >= 20 || now.getHours() <= 7) && !elements.body.classList.contains("hireme")) {
+            toggleNightMode(elements.body)
     }
 
     if (elements.emailLinks) {
@@ -58,4 +58,12 @@
             updateEmailLink(link)
         })
     }
+
+    // HIRE ME ANIMATIONS
+    const wow = new WOW()
+    wow.init()
+
+    setTimeout(function() {
+        window.scrollTo(0, 0) // Fix for when the page is loaded somewhere in the middle/bottom
+    }, 1000);
 })()

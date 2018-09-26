@@ -350,14 +350,113 @@ footer {
 
 // Hire me page
 
+@keyframes logoIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes logoOut {
+    0% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+// https://github.com/daneden/animate.css/blob/master/source/fading_entrances/fadeInUp.css
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 25px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+.fadeInUp {
+    animation-name: fadeInUp;
+}
+
+.wow { visibility: hidden; }
+
 .hireme {
+    header {
+        padding: 8vw;
+
+        @media @tablets {
+            padding: 15vw;
+        }
+
+        @media @desktops {
+            padding: 8vw;
+        }
+    }
+
+    .logo {
+        width: 100vw;
+        height: 100vh;
+        z-index: 200;
+        position: fixed;
+        pointer-events: none;
+        animation-name: fadeOut;
+        animation-duration: 1s;
+        animation-delay: 3.2s;
+        animation-fill-mode: forwards;
+
+        svg {
+            animation-name: logoIn, logoOut;
+            animation-duration: 1s, 1s;
+            animation-delay: 0s, 3s;
+            animation-fill-mode: forwards;
+            width: 25vw;
+
+            @media @desktops {
+                width: 15vw;
+            }
+        }
+    }
+
     main {
-        width: 50vw;
+        width: 100vw;
         align-self: flex-end;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
+
+        @media @desktops {
+            width: 50vw;
+        }
     }
 
     .content {
@@ -366,6 +465,7 @@ footer {
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 
         .title {
             font-weight: normal;
@@ -383,20 +483,14 @@ footer {
             display: inline-block;
             font-size: 12 / @rem;
             line-height: 1.5;
-            margin-bottom: 0;
-            margin-top: 0;
+            margin-bottom: 0.3rem !important;
+            margin-top: 0 !important;
             padding: 2px 6px;
             background-color: fadeout(@text-color, 25%);
             color: @white;
             border-radius: 3px;
             margin-right: 0.3rem;
-
-            @media @desktops {
-                line-height: 1.5;
-                margin-bottom: 0.3rem;
-                margin-top: 0;
-            }
         }
     }
-
 }
+
