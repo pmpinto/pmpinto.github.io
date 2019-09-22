@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+        <title>Mero</title>
+        <link>https://pedropinto.me</link>
+        <description>A collection of points of view, opinions, suggestions and completely random thoughts by Pedro Pinto.</description>
+        <lastBuildDate>Sun, 22 Sep 2019 20:10:38 +0000</lastBuildDate>
+        
+        <item>
+            <title>Markdown parsing</title>
+            <link>
+                https://pedropinto.me/markdown-parsing
+            </link>
+            <description>
+                &lt;p&gt;Here’s an overview of what you can expect to do with kramdown, the markdown parser used in Mero.&lt;/p&gt;
+
+
+            </description>
+            <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
+            <guid>
+                https://pedropinto.me/markdown-parsing
+            </guid>
+        </item>
+        
+        <item>
+            <title>Short post</title>
+            <link>
+                https://pedropinto.me/short-post
+            </link>
+            <description>
+                &lt;p&gt;Just testing this out.&lt;/p&gt;
+
+
+            </description>
+            <pubDate>Fri, 23 Aug 2019 23:00:00 +0000</pubDate>
+            <guid>
+                https://pedropinto.me/short-post
+            </guid>
+        </item>
+        
+        <item>
+            <title>Welcome to Jekyll!</title>
+            <link>
+                https://pedropinto.me/welcome-to-jekyll
+            </link>
+            <description>
+                &lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+
+            </description>
+            <pubDate>Thu, 15 Aug 2019 23:00:00 +0000</pubDate>
+            <guid>
+                https://pedropinto.me/welcome-to-jekyll
+            </guid>
+        </item>
+        
+    </channel>
+</rss>

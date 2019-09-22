@@ -166,13 +166,13 @@
 .error__title { font-family: "space-mono", monospace; font-size: 11.089rem; font-weight: 400; line-height: 1; color: #93827f; margin: 0; }
 
 .error__description { font-family: "work-sans", sans-serif; font-size: 1.618rem; font-weight: 400; line-height: 1.618; color: #353535; margin: 1rem 0; }
+.error__description code { font-family: "space-mono", monospace; background-color: rgba(147, 130, 127, 0.146); color: #82706d; border-radius: 0.26475rem; padding: 0 0.6180625rem; }
+.error__description p { margin: 0; }
 
 .error__text { font-family: "work-sans", sans-serif; font-size: 1rem; font-weight: 400; line-height: 1.618; color: #93827f; margin: 1rem 0; }
 
 .error__link { color: #c14953; text-decoration-color: rgba(193, 73, 83, 0.146); }
 .error__link:hover { text-decoration: underline; text-decoration-color: #c14953; }
-
-.error__code { font-family: "space-mono", monospace; background-color: rgba(147, 130, 127, 0.146); color: #82706d; border-radius: 0.26475rem; padding: 0 0.6180625rem; }
 
 .about__title { font-size: 2.6179375rem; font-family: "space-mono", monospace; font-weight: 400; line-height: 1.618; color: #353535; }
 
@@ -187,8 +187,7 @@
 
 .about__muted { color: rgba(53, 53, 53, 0.382); }
 
-.about__footer { margin-top: 4.2358125rem; }
-.about__footer .about__text { color: #93827f; }
+p.about__footer { margin-top: 4.2358125rem; color: #93827f; }
 
 .preload * { transition: none !important; }
 
