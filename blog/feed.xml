@@ -4,7 +4,7 @@
         <title>Mero</title>
         <link>https://pedropinto.me</link>
         <description>A collection of points of view, opinions, suggestions and completely random thoughts by Pedro Pinto.</description>
-        <lastBuildDate>Sun, 22 Sep 2019 21:40:02 +0000</lastBuildDate>
+        <lastBuildDate>Wed, 26 Feb 2020 02:22:14 +0000</lastBuildDate>
         
         <item>
             <title>Markdown parsing</title>
@@ -44,7 +44,7 @@
                 https://pedropinto.me/welcome-to-jekyll
             </link>
             <description>
-                &lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+                &lt;p&gt;You’ll find this post in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
 
 
             </description>

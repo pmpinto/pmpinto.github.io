@@ -128,6 +128,11 @@
 .post__content figure.highlight .lineno { min-width: 2em; user-select: none; color: rgba(130, 112, 109, 0.382); font-size: 1rem; }
 .post__content figure.highlight code { display: block; padding: 1rem; overflow-x: scroll; }
 .post__content figure.highlight code::before { content: attr(data-lang); position: absolute; right: 0.6180625rem; top: 0.6180625rem; color: #82706d; font-family: "space-mono", monospace; font-size: 0.8540625rem; line-height: 1; font-weight: 400; }
+.post__content figure.highlight code .rouge-table { width: 100%; }
+.post__content figure.highlight code .gi { background-color: #c6e7b9; color: #2b521c; }
+.post__content figure.highlight code .gd { background-color: #e7b9c0; color: #521c24; }
+.post__content figure.highlight code .gi, .post__content figure.highlight code .gd { width: 100%; display: block; margin-left: -0.26475rem; padding-right: 0.26475rem; border-radius: 0.26475rem; }
+.post__content figure.highlight code .gi::first-letter, .post__content figure.highlight code .gd::first-letter { padding-left: 0.26475rem; }
 .post__content figure.highlight pre { font-family: "space-mono", monospace; margin: 0; font-size: 1rem; }
 .post__content table:not(.rouge-table) { margin: 1.618rem 0; width: 100%; border-collapse: collapse; }
 .post__content table:not(.rouge-table) td, .post__content table:not(.rouge-table) th { font-size: 1rem; font-weight: 400; line-height: 1.618; padding: 0.6180625rem; }
