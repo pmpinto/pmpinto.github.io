@@ -3,92 +3,50 @@
     
     <url>
         <loc>/404</loc>
-        <lastmod>2020-02-26</lastmod>
+        <lastmod>2020-03-06</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
     </url>
     
     <url>
         <loc>/about/</loc>
-        <lastmod>2020-02-26</lastmod>
+        <lastmod>2020-03-06</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
     </url>
     
     <url>
         <loc>/feed.xml</loc>
-        <lastmod>2020-02-26</lastmod>
+        <lastmod>2020-03-06</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
     </url>
     
     <url>
-        <loc>/category/jekyll/</loc>
-        <lastmod>2020-02-26</lastmod>
+        <loc>/category/hello/</loc>
+        <lastmod>2020-03-06</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
     </url>
     
     <url>
-        <loc>/category/update/</loc>
-        <lastmod>2020-02-26</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    <url>
-        <loc>/category/quotes/</loc>
-        <lastmod>2020-02-26</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    <url>
-        <loc>/category/shit-people-say/</loc>
-        <lastmod>2020-02-26</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    <url>
-        <loc>/category/markdown/</loc>
-        <lastmod>2020-02-26</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    <url>
-        <loc>/category/documentation/</loc>
-        <lastmod>2020-02-26</lastmod>
+        <loc>/category/theme/</loc>
+        <lastmod>2020-03-06</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
     </url>
     
     <url>
         <loc>/index.html</loc>
-        <lastmod>2020-02-26</lastmod>
+        <lastmod>2020-03-06</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
     </url>
     
     
     <url>
-        <loc>/markdown-parsing</loc>
-        <lastmod>2020-02-26</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    <url>
-        <loc>/short-post</loc>
-        <lastmod>2020-02-26</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    <url>
-        <loc>/welcome-to-jekyll</loc>
-        <lastmod>2020-02-26</lastmod>
+        <loc>/hello-world</loc>
+        <lastmod>2020-03-06</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
     </url>
