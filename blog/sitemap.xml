@@ -3,42 +3,56 @@
     
     <url>
         <loc>/404</loc>
-        <lastmod>2020-03-06</lastmod>
+        <lastmod>2020-03-13</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
     </url>
     
     <url>
         <loc>/about/</loc>
-        <lastmod>2020-03-06</lastmod>
+        <lastmod>2020-03-13</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
     </url>
     
     <url>
         <loc>/feed.xml</loc>
-        <lastmod>2020-03-06</lastmod>
+        <lastmod>2020-03-13</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
+        <loc>/category/jobs/</loc>
+        <lastmod>2020-03-13</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
+        <loc>/category/interviews/</loc>
+        <lastmod>2020-03-13</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
     </url>
     
     <url>
         <loc>/category/hello/</loc>
-        <lastmod>2020-03-06</lastmod>
+        <lastmod>2020-03-13</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
     </url>
     
     <url>
         <loc>/category/theme/</loc>
-        <lastmod>2020-03-06</lastmod>
+        <lastmod>2020-03-13</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
     </url>
     
     <url>
         <loc>/index.html</loc>
-        <lastmod>2020-03-06</lastmod>
+        <lastmod>2020-03-13</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
     </url>
@@ -46,7 +60,14 @@
     
     <url>
         <loc>/hello-world</loc>
-        <lastmod>2020-03-06</lastmod>
+        <lastmod>2020-03-13</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
+        <loc>/4-months-of-unemployment</loc>
+        <lastmod>2020-03-13</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
     </url>

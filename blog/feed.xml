@@ -4,7 +4,7 @@
         <title>Mero</title>
         <link>https://pedropinto.me</link>
         <description>A collection of points of view, opinions, suggestions and completely random thoughts by Pedro Pinto.</description>
-        <lastBuildDate>Fri, 06 Mar 2020 23:21:08 +0000</lastBuildDate>
+        <lastBuildDate>Fri, 13 Mar 2020 21:59:00 +0000</lastBuildDate>
         
         <item>
             <title>Hello world!</title>
@@ -19,6 +19,22 @@
             <pubDate>Fri, 06 Mar 2020 00:00:00 +0000</pubDate>
             <guid>
                 https://pedropinto.me/hello-world
+            </guid>
+        </item>
+        
+        <item>
+            <title>4 months of unemployment</title>
+            <link>
+                https://pedropinto.me/4-months-of-unemployment
+            </link>
+            <description>
+                &lt;p&gt;&lt;em&gt;This post was originally shared on &lt;a href=&quot;https://medium.com/@pmpinto/4-months-of-unemployment-20ffa11e20c7&quot;&gt;Medium&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+
+            </description>
+            <pubDate>Tue, 15 Jan 2019 00:00:00 +0000</pubDate>
+            <guid>
+                https://pedropinto.me/4-months-of-unemployment
             </guid>
         </item>
         
