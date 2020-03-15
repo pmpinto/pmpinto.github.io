@@ -62,4 +62,6 @@
   .pagination .pagination__link--disabled { color: #a39592; }
   .pagination .pagination__link--active { color: #ca636c; }
   .post .post__title { color: #f4f2f3; }
-  .post .post__date { color: #a39592; } }
+  .post .post__date { color: #a39592; }
+  .photo-slider .photo-slider__photo { border-color: #464646; background-color: #242424; }
+  .photo-slider .photo-slider__link { background-color: #f4f2f3; } }

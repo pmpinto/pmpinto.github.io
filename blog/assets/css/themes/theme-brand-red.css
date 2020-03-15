@@ -77,3 +77,6 @@ body, html { background-color: #c14953; color: #f4f2f3; }
 
 .post .post__title { color: #f4f2f3; }
 .post .post__date { color: #e3abb0; }
+
+.photo-slider .photo-slider__photo { border-color: #ca636c; background-color: #ac3b44; }
+.photo-slider .photo-slider__link { background-color: #f4f2f3; }
