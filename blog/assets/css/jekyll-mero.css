@@ -173,7 +173,7 @@
 
 .photo-slider__photo { margin-right: 0.25rem; scroll-snap-align: center center; height: 50vh; pointer-events: none; border-radius: 0.26475rem; object-fit: cover; object-position: center; border: 0.0625rem solid white; background-color: #e4dfe2; box-shadow: 0.163625rem 0 1.814375rem rgba(0, 0, 0, 0.146); }
 @media (min-width: 48em) { .photo-slider__photo { height: 50vw; } }
-@media (min-width: 64em) { .photo-slider__photo { height: 30vw; } }
+@media (min-width: 64em) { .photo-slider__photo { height: 37vw; } }
 
 .photo-slider__nav { position: absolute; display: flex; width: 100%; bottom: 0; left: 0; list-style: none; padding: 0.6180625rem; margin: 0; justify-content: center; box-sizing: border-box; }
 
