@@ -20,9 +20,8 @@ body, html { background-color: #93827f; color: #353535; }
 .post__content figure figcaption { color: #0c0c0c; }
 .post__content hr { border-color: rgba(12, 12, 12, 0.108); }
 .post__content hr::before { background-color: #93827f; box-shadow: 0 0 0 0.6180625rem #93827f; border-color: rgba(12, 12, 12, 0.108); }
-.post__content blockquote { background-color: #4d4341; }
-.post__content blockquote::before { color: #0c0c0c; }
-.post__content blockquote p { color: #93827f; }
+.post__content blockquote::before, .post__content blockquote::after { background-color: #4d4341; color: #0c0c0c; text-shadow: 0 0.125rem #93827f, 0 0.25rem #93827f, 0.125rem 0 #93827f, 0.25rem 0 #93827f, -0.125rem 0 #93827f, -0.25rem 0 #93827f, 0 -0.125rem #93827f, 0 -0.25rem #93827f; }
+.post__content blockquote p { color: #0c0c0c; }
 .post__content table:not(.rouge-table) th { color: #0c0c0c; background-color: #8f7e7b; }
 .post__content table:not(.rouge-table) td { color: #353535; background-color: #93827f; }
 .post__content table:not(.rouge-table) tbody tr:nth-child(even) td { background-color: rgba(12, 12, 12, 0.108); }
