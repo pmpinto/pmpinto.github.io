@@ -18,7 +18,7 @@
   .post__content hr { border-color: rgba(163, 149, 146, 0.108); }
   .post__content hr::before { background-color: #1c1c1c; box-shadow: 0 0 0 0.6180625rem #1c1c1c; border-color: rgba(163, 149, 146, 0.108); }
   .post__content blockquote::before, .post__content blockquote::after { background-color: rgba(163, 149, 146, 0.146); color: #a39592; text-shadow: 0 0.125rem #1c1c1c, 0 0.25rem #1c1c1c, 0.125rem 0 #1c1c1c, 0.25rem 0 #1c1c1c, -0.125rem 0 #1c1c1c, -0.25rem 0 #1c1c1c, 0 -0.125rem #1c1c1c, 0 -0.25rem #1c1c1c; }
-  .post__content blockquote p { color: #a39592; width: 100%; }
+  .post__content blockquote p { color: #a39592; }
   .post__content table:not(.rouge-table) th { color: #a39592; background-color: #171717; }
   .post__content table:not(.rouge-table) td { color: #f4f2f3; background-color: #1c1c1c; }
   .post__content table:not(.rouge-table) tbody tr:nth-child(even) td { background-color: rgba(163, 149, 146, 0.108); }
