@@ -21,7 +21,7 @@ body, html { background-color: #c14953; color: #f4f2f3; }
 .post__content hr { border-color: rgba(227, 171, 176, 0.108); }
 .post__content hr::before { background-color: #c14953; box-shadow: 0 0 0 0.6180625rem #c14953; border-color: rgba(227, 171, 176, 0.108); }
 .post__content blockquote::before, .post__content blockquote::after { background-color: rgba(53, 53, 53, 0.32227); color: #e3abb0; text-shadow: 0 0.125rem #c14953, 0 0.25rem #c14953, 0.125rem 0 #c14953, 0.25rem 0 #c14953, -0.125rem 0 #c14953, -0.25rem 0 #c14953, 0 -0.125rem #c14953, 0 -0.25rem #c14953; }
-.post__content blockquote p { color: #e3abb0; }
+.post__content blockquote p { color: #e3abb0; width: 100%; }
 .post__content table:not(.rouge-table) th { color: #e3abb0; background-color: #bf434d; }
 .post__content table:not(.rouge-table) td { color: #f4f2f3; background-color: #c14953; }
 .post__content table:not(.rouge-table) tbody tr:nth-child(even) td { background-color: rgba(227, 171, 176, 0.108); }
