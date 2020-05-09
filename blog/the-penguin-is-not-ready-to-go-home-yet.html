@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/blog/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/blog/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/blog/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/blog/site.webmanifest" />
+        <link rel="mask-icon" href="/blog/safari-pinned-tab.svg" color="#c14953" />
+        <meta name="msapplication-TileColor" content="#f4f2f3" />
+        <meta name="theme-color" content="#c14953" />
+
+        <link
+            rel="alternate"
+            type="application/rss+xml"
+            href="https://pedropinto.me/feed.xml"
+            title="Mero"
+        />
+
+        <link rel="stylesheet" href="/blog/assets/css/jekyll-mero.css" />
+
+        
+        <link rel="stylesheet" href="/blog/assets/css/themes/theme-prefers-dark.css" />
+        
+
+        <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>The penguin is not ready to go home yet | Mero</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="The penguin is not ready to go home yet" />
+<meta name="author" content="Pedro Pinto" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I gave Linux a try, twice, and these are some thoughts on the experience and why I believe it’s not quite yet ready for home users." />
+<meta property="og:description" content="I gave Linux a try, twice, and these are some thoughts on the experience and why I believe it’s not quite yet ready for home users." />
+<link rel="canonical" href="https://pedropinto.me/blog/the-penguin-is-not-ready-to-go-home-yet" />
+<meta property="og:url" content="https://pedropinto.me/blog/the-penguin-is-not-ready-to-go-home-yet" />
+<meta property="og:site_name" content="Mero" />
+<meta property="og:image" content="https://pedropinto.me/blog/assets/images/posts/the-penguin-is-not-ready-to-go-home-yet/cover.png" />
+<meta property="og:image:height" content="900" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-05-09T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@pmpinto" />
+<meta name="twitter:creator" content="@pmpinto" />
+<script type="application/ld+json">
+{"description":"I gave Linux a try, twice, and these are some thoughts on the experience and why I believe it’s not quite yet ready for home users.","author":{"@type":"Person","name":"Pedro Pinto"},"@type":"BlogPosting","url":"https://pedropinto.me/blog/the-penguin-is-not-ready-to-go-home-yet","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://pedropinto.me/blog/assets/images/open_graph.png"},"name":"Pedro Pinto"},"image":{"width":1200,"height":900,"url":"https://pedropinto.me/blog/assets/images/posts/the-penguin-is-not-ready-to-go-home-yet/cover.png","@type":"imageObject"},"headline":"The penguin is not ready to go home yet","dateModified":"2020-05-09T00:00:00+00:00","datePublished":"2020-05-09T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://pedropinto.me/blog/the-penguin-is-not-ready-to-go-home-yet"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    </head>
+
+    <body class="preload">
+        <nav class="navigation">
+    <ul class="navigation__list">
+        <li class="navigation__item navigation__item--home">
+            <a href="/blog/" class="navigation__link" aria-label="Go back home">
+                <span class="navigation__icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M10 19v-5h4v5a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6a1 1 0 0 0-1.34 0l-8.36 7.53a.5.5 0 0 0 .33.87H5v7a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1z"/></svg>
+
+                </span>
+            </a>
+        </li>
+        <li class="navigation__item">
+            <a
+                href="/blog/about/"
+                class="navigation__link"
+                aria-label="Go to about page"
+            >
+                <span class="navigation__icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v1c0 .55.45 1 1 1h14c.55 0 1-.45 1-1v-1c0-2.66-5.33-4-8-4z"/></svg>
+
+                </span>
+            </a>
+        </li>
+
+        <li class="navigation__item navigation__item--category">
+            <button
+                class="navigation__button js-category-toggle"
+                aria-label="Toggle list of categories"
+            >
+                <span class="navigation__icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M2.53 19.65l1.34.56v-9.03l-2.43 5.86a2.02 2.02 0 0 0 1.09 2.61zm19.5-3.7L17.07 3.98a2.01 2.01 0 0 0-2.6-1.08L7.1 5.95a2 2 0 0 0-1.08 2.6l4.96 11.97a2 2 0 0 0 2.6 1.08l7.36-3.05a2 2 0 0 0 1.09-2.6zM7.88 8.75c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-2 11c0 1.1.9 2 2 2h1.45l-3.45-8.34v6.34z"/></svg>
+
+                </span>
+            </button>
+            <ul class="navigation__sublist">
+                 
+                <li class="navigation__item">
+                    <span class="navigation__muted">#</span
+                    ><a
+                        href="/blog/category/jobs/"
+                        class="navigation__link"
+                        >jobs</a
+                    >
+                    <span class="navigation__amount">
+                        <span class="navigation__muted">2</span>
+                    </span>
+                </li>
+                 
+                <li class="navigation__item">
+                    <span class="navigation__muted">#</span
+                    ><a
+                        href="/blog/category/interviews/"
+                        class="navigation__link"
+                        >interviews</a
+                    >
+                    <span class="navigation__amount">
+                        <span class="navigation__muted">1</span>
+                    </span>
+                </li>
+                 
+                <li class="navigation__item">
+                    <span class="navigation__muted">#</span
+                    ><a
+                        href="/blog/category/hello/"
+                        class="navigation__link"
+                        >hello</a
+                    >
+                    <span class="navigation__amount">
+                        <span class="navigation__muted">1</span>
+                    </span>
+                </li>
+                 
+                <li class="navigation__item">
+                    <span class="navigation__muted">#</span
+                    ><a
+                        href="/blog/category/theme/"
+                        class="navigation__link"
+                        >theme</a
+                    >
+                    <span class="navigation__amount">
+                        <span class="navigation__muted">1</span>
+                    </span>
+                </li>
+                 
+                <li class="navigation__item">
+                    <span class="navigation__muted">#</span
+                    ><a
+                        href="/blog/category/health/"
+                        class="navigation__link"
+                        >health</a
+                    >
+                    <span class="navigation__amount">
+                        <span class="navigation__muted">1</span>
+                    </span>
+                </li>
+                 
+                <li class="navigation__item">
+                    <span class="navigation__muted">#</span
+                    ><a
+                        href="/blog/category/covid-19/"
+                        class="navigation__link"
+                        >covid-19</a
+                    >
+                    <span class="navigation__amount">
+                        <span class="navigation__muted">1</span>
+                    </span>
+                </li>
+                 
+                <li class="navigation__item">
+                    <span class="navigation__muted">#</span
+                    ><a
+                        href="/blog/category/productivity/"
+                        class="navigation__link"
+                        >productivity</a
+                    >
+                    <span class="navigation__amount">
+                        <span class="navigation__muted">2</span>
+                    </span>
+                </li>
+                 
+                <li class="navigation__item">
+                    <span class="navigation__muted">#</span
+                    ><a
+                        href="/blog/category/giveaway/"
+                        class="navigation__link"
+                        >giveaway</a
+                    >
+                    <span class="navigation__amount">
+                        <span class="navigation__muted">1</span>
+                    </span>
+                </li>
+                 
+                <li class="navigation__item">
+                    <span class="navigation__muted">#</span
+                    ><a
+                        href="/blog/category/operating-systems/"
+                        class="navigation__link"
+                        >operating-systems</a
+                    >
+                    <span class="navigation__amount">
+                        <span class="navigation__muted">1</span>
+                    </span>
+                </li>
+                 
+                <li class="navigation__item">
+                    <span class="navigation__muted">#</span
+                    ><a
+                        href="/blog/category/linux/"
+                        class="navigation__link"
+                        >linux</a
+                    >
+                    <span class="navigation__amount">
+                        <span class="navigation__muted">1</span>
+                    </span>
+                </li>
+                
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+        <main>
+            <article class="post">
+    <div class="page__wrapper">
+        <h1 class="post__title">The penguin is not ready to go home yet</h1>
+
+        <time class="post__date" datetime="2020-05-09">
+            May 09, 2020
+        </time>
+
+        <div class="post__content">
+            <p><img src="assets/images/posts/the-penguin-is-not-ready-to-go-home-yet/cover.png" alt="Penguin crying in front of a house" /></p>
+
+<p class="lead">I gave Linux a try, twice, and these are some thoughts on the experience and why I believe it’s not quite yet ready for home users.</p>
+
+<h1 id="from-windows-to-mac-os-x">From Windows to Mac OS X</h1>
+
+<p>Roughly 15 years ago, Windows was everything I knew regarding operating systems. I had used it for years, knew the ins and outs and how to use it on a daily basis. But I was never a “power user”.</p>
+
+<p>Then I got into design and naturally I started to hear and experience a lot about Apple and the Macintosh world. I bought my first MacBook Pro in 2007, and never looked back. Apple had just recently moved from PowerPC to Intel processors, and this small change would make the transition much easier for me.</p>
+
+<p>Even though I remember feeling some transition pains, at the time I didn’t have a huge amount of data to deal with. I was actually about to start the time of my life where I would be producing my own data and personal files so I don’t think the transition could have been made at a better time.</p>
+
+<p>A few months in, I was already pretty much used to the very user friendly although not that beautiful <a href="https://en.wikipedia.org/wiki/Mac_OS_X_Tiger">Mac OS X Tiger</a>.</p>
+
+<p><img src="assets/images/posts/the-penguin-is-not-ready-to-go-home-yet/mac-os-x-tiger.png" alt="Mac OS X Tiger" /></p>
+
+<p>For a long period of time, I didn’t look elsewhere regarding operating systems. So much so, that I eventually got an iPod Classic (long live) and later an iPhone 3GS.<br />
+I was living the Apple life, and I was happy about it.</p>
+
+<h1 id="from-macintosh-to-hackintosh">From Macintosh to Hackintosh</h1>
+
+<p>As most people living the “Apple life” might have noticed by now, Apple products aren’t known for their cheap price tag. Roughly 5 years after buying my first Macintosh I was looking for a desktop computer, and naturally looked at Apple desktops. But quickly realised the price tag I was willing to pay for a desktop computer wouldn’t give me a great deal at Apple. So I naively looked for a way to use Mac OS X in a non-Apple computer.</p>
+
+<p>That’s when I found out about Hackintosh. I did a lot of research and took the time to pick the right components. Of course I had to go through a lot of troubles to get it properly working at the time, I would be surprised if I didn’t have to. But eventually it turned out to be a stable build.</p>
+
+<p>Since then, I had repeated this process an unknown number of times, whenever I feel like the most recent macOS version brings something I would be willing to trade for the usual troubles of a new clean installation, like a system-wide dark theme.</p>
+
+<h1 id="but-then-i-looked-at-linux">But then I looked at Linux</h1>
+
+<p>At some point, I started to look for a real alternative to macOS. I can’t recall exactly what triggered this search in the first place, but I can think of a good reason from the top of my mind:</p>
+
+<p>When building a hackintosh there a lot of issues you’re eventually going to deal with, even when you’re able to pick all the components for your build.</p>
+
+<p>Here are some of the issues I had with recent build updates:</p>
+<ul>
+  <li><strong>Graphics</strong><br />
+Ever since I built the first hackintosh, I used an NVIDIA GTX 660 Ti. On a recent update, probably macOS Mojave, Apple decided to not support these anymore. And there’s no driver from NVIDIA itself. Which left me with a very hot potato at hands—after some time using the computer, the graphics card would run out of memory and glitches started to pop up everywhere in the screen, which made it unusable until rebooted.<br />
+Bought a Radeon RX 580, which is supported by default, and the problem got solved.</li>
+  <li><strong>Wi-Fi</strong><br />
+On the most recent update, the one I’m writing this on, I didn’t have Wi-Fi. Not just signal, macOS wouldn’t recognize the network card at all. Eventually found out that I could reuse an old Kext file from a previous macOS version. Now Wi-Fi works as expected, out of the box.</li>
+</ul>
+
+<p>But what if you want to run macOS on a non-Apple laptop?</p>
+
+<p>There are certainly a lot of people that managed to successfully install macOS on a laptop, but you usually can’t swap components around if needed, and for me that’s enough to not want to go down that road.</p>
+
+<p>All that’s left is Linux (because I’m not going back to Windows anymore)!</p>
+
+<h1 id="so-i-gave-linux-a-try">So I gave Linux a try</h1>
+
+<p>Last year, this urge to try Linux came to my mind again. I had previously ignored these thoughts for a very specific reason: different file systems would make it hard to jump from macOS to Linux. But it felt like this time was different.</p>
+
+<p>This time, I just wanted to give it a try, more than feeling the pressure to make it work as my daily driver.</p>
+
+<p>So I did some research to check which would be a good first distro for me to try and, mostly influenced by UI consistency, I installed <a href="https://getfedora.org/">Fedora</a>… and got disappointed.</p>
+
+<p><img src="assets/images/posts/the-penguin-is-not-ready-to-go-home-yet/fedora.jpg" alt="Fedora" /></p>
+
+<p class="lead">Most of the times, if one gets disappointed, it’s due to wrong expectations.</p>
+
+<p>Back in the day, I remember people referring to Linux as that operating system where you would necessarily need to know how to use a command line to work with it. But I never imagined this would still be true in 2019. Besides, there are still a lot of visual inconsistencies throughout the system. For a visual guy like me, it’s pretty hard to ignore those.</p>
+
+<blockquote>
+  <p><a href="https://twitter.com/pmpinto/status/1141013327985946630/">(…) What’s not fun is the sound issues I’m having. Also, over 10 years of keyboard shortcuts on macOS are making this almost impossible to deal with, more than visuals…</a></p>
+</blockquote>
+
+<p>If I recall correctly, these were the things that ultimately made me abandon Fedora:</p>
+<ul>
+  <li>Not having sound at all</li>
+  <li>Weak Wi-Fi signal</li>
+  <li>Visual inconsistencies</li>
+  <li>Keyboard shortcuts</li>
+  <li>No reliable way of using APFS/HFS+ drives</li>
+</ul>
+
+<h1 id="a-year-went-by">A year went by…</h1>
+
+<p>This time I came across <a href="https://elementary.io/">Elementary OS</a> and my first thoughts were:</p>
+
+<p class="lead">Finally, a good looking design distro that seems to be targeted at those who don’t want to tinker with a command line all day.</p>
+
+<p><img src="assets/images/posts/the-penguin-is-not-ready-to-go-home-yet/elementary-os.png" alt="Elemtentary OS" /></p>
+
+<p>Secretly, my expectation was that this would be the Android of Linux distros.<br />
+Meaning that it’s as flexible as you want it to be, and as user friendly as you can ask for—such a high bar to begin with, but that’s where I was at.</p>
+
+<p>Eventually, the curiosity took the best of me, and I installed it. I had a secondary SSD I could play with to prevent my primary OS to get affected by this. Just like I did for Fedora, I installed it on that drive and immediately started to play around with it.</p>
+
+<p class="lead">Clearly this one has been taken care of a lot better, in regards to visual consistency—that’s appreciated!</p>
+
+<p>At first, I didn’t have sound either. But eventually did something that fixed that.<br />
+The keyboard shortcuts was still an issue to me. I gave <a href="https://github.com/rbreaves/kinto">Kinto</a> a try but that didn’t seem to be doing its thing correctly.<br />
+The Wi-Fi signal was still weak, and nothing I tried seemed to help. Remember, I was still using the same network card on macOS on the same computer, so I knew it was not faulty.</p>
+
+<p>The Wi-Fi was so slow, I was unable to update any package or even load a website. I actually used the tethering on my phone to be able to install Google Chrome and do some updates.</p>
+
+<p>Besides all this, seen as one of the most user friendly distros, I would expect to be able to install all the apps I need and configure it without the need to open a command line. And that was not the case.</p>
+
+<h1 id="not-that-user-friendly-after-all">Not that user friendly after all</h1>
+
+<p>Even though Elementary OS comes with <a href="https://appcenter.elementary.io/">an AppCenter full of apps</a> and most of them are somewhat using the same visual language—which is great—it’s missing some essentials for me, so I looked for those.</p>
+
+<p>For instance, <a href="https://code.visualstudio.com/">VS Code</a>.<br />
+I couldn’t find it in the AppCenter so I searched and landed at their website.<br />
+I’m presented with two options for Linux: a <code class="highlighter-rouge">.deb</code> file for Debian or Ubuntu and a <code class="highlighter-rouge">.rpm</code> file for Red Hat, Fedora or SUSE. So I search a bit and find out Elementary is based on Ubuntu, so I assume I will be fine with the <code class="highlighter-rouge">.deb</code> file.</p>
+
+<p>Except that… If I remember correctly, out of the box, Elementary OS (or the file manager) has no idea what to do with these files, which I found very amusing, and cute.</p>
+
+<p class="lead">Eventually found out about <a href="https://appcenter.elementary.io/com.github.donadigo.eddy/">Eddy</a> which takes care of installing <code class="highlighter-rouge">.deb</code> packages.</p>
+
+<p>Then I searched for <a href="https://www.spotify.com/pt/download/linux/">Spotify</a>. And this is a great example of why I believe Linux isn’t quite there yet. Besides the fact that “They [Spotify engineers] work on it in their spare time and it is currently not a platform that we [Spotify] actively support”, it’s a lot more cumbersome to install it on Linux than on Windows or macOS. And from my experience, this is true for many other apps as well.</p>
+
+<p>It usually involves running a command to install an app through <code class="highlighter-rouge">snap</code> for instance, or visiting a website such as <a href="https://flathub.org/apps/details/com.spotify.Client">Flathub</a> and installing it from there, which Elementary OS <a href="https://flatpak.org/setup/elementary%20OS/">apparently supports</a> out of the box.</p>
+
+<p>Although… <a href="https://twitter.com/danielfore">Daniel Foré</a>, founder of Elementary OS said that:</p>
+
+<blockquote>
+  <p><a href="https://www.reddit.com/r/elementaryos/comments/8c1ax2/why_doesnt_elementary_come_preinstalled_with_a/dxcpdvt/">[…] The recommended way to get apps is through AppCenter.</a></p>
+</blockquote>
+
+<p>And I totally agree! I would much rather click a button on the AppCenter than having to download a <code class="highlighter-rouge">.deb</code> file and installing a <code class="highlighter-rouge">.deb</code> file manager to install an app.</p>
+
+<p>So I wonder why didn’t Spotify, and some other apps, show up in the AppCenter in the first place. As far as I can remember, they show up, but only after installing an app from that source. It would be great to include this information in some kind of an onboarding screen.</p>
+
+<hr />
+
+<p>Don’t get me wrong here, I do believe the team behind Elementary OS is doing an amazing job. But in my opinion it’s still a long way to go until I can even recommend this as a great alternative for a home computer.<br />
+Until you can configure everything you need, install all the necessary drivers and apps without ever needing to open a command line, it’s not ready for that use case.</p>
+
+<p>It’s actively being enhanced, which you can tell by <a href="https://blog.elementary.io/">their blog</a>. Chances are you will get a better experience than I did. If you can afford the headaches, by all means, give it a try!</p>
+
+<h1 id="but-thats-not-all">But that’s not all!</h1>
+
+<p>This time, this adventure came with a very sour surprise.</p>
+
+<p>For some reason, while installing Elementary OS, it assumed I would like to run it by default at boot. So it moved itself to the top of the boot options on my machine. Every time I would boot my computer, I would land at Elementary OS. Not appreciated at all!</p>
+
+<p>I’m not talking about the options in the BIOS settings, those would have been easy to fix.</p>
+
+<p>At first I didn’t know exactly what was happening. I did tinker around and tried a lot of stuff to bring Clover (my boot loader for macOS) back to the top. But it seemed like every time I would boot into Elementary OS, it would be back at the top of the list again.</p>
+
+<p>I was genuinely fed up with this, and at some point I might have done such a huge hammering to fix it that macOS would take 7 minutes to boot—I remember overriding the <code class="highlighter-rouge">config.plist</code> file on the EFI partition without ever opening it up in the first place, for some weird reason.<br />
+Sometimes, when logging in, I would realise it wouldn’t connect to any Wi-Fi networks, so I would need to reboot, which would turn it into a 14 minutes boot—lovely as you can imagine.</p>
+
+<p>I took this opportunity to do a clean install of macOS Mojave once again and ended up with what seems to be the most stable build in a long time.</p>
+
+<p class="lead">For now, Linux is a thing for servers, where I’m not expecting to have a GUI in the first place.</p>
+
+<p>And as I once heard, macOS is the best Linux distro there is… yet.</p>
+
+        </div>
+
+        
+            <ul class="category-list">
+     
+    <li class="category-list__item">
+        <span class="category-list__hashtag">#</span
+        ><a
+            href="/blog/category/operating-systems/"
+            class="category-list__link"
+            aria-label="This post has the operating-systems category. Read more from this category."
+            >operating-systems</a
+        >
+    </li>
+     
+    <li class="category-list__item">
+        <span class="category-list__hashtag">#</span
+        ><a
+            href="/blog/category/linux/"
+            class="category-list__link"
+            aria-label="This post has the linux category. Read more from this category."
+            >linux</a
+        >
+    </li>
+    
+</ul>
+
+        
+            <div class="author">
+    
+    <address class="author__text"><span class="author__at">@</span
+        ><a
+            href="http://twitter.com/pmpinto"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="author__link"
+            aria-label="Post written by Pedro Pinto. Go to their Twitter page."
+            title="Pedro Pinto"
+            >pmpinto</a
+        >
+    </address>
+    
+</div>
+
+        
+
+    </div>
+</article>
+
+        </main>
+
+        <footer class="footer">
+    <div class="page__wrapper">
+        <p class="footer__text">
+            Mero is a minimal and comfortable Jekyll theme.
+        </p>
+        <p class="footer__text">
+            Designed and built by
+            <a
+                class="footer__link"
+                href="https://pedropinto.me/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Pedro Pinto</a
+            >.
+        </p>
+        <ul class="footer__list">
+            <li class="footer__item">
+                <a
+                    class="footer__link"
+                    href="https://github.com/pmpinto/jekyll-mero"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Get Mero</a
+                >
+            </li>
+            <li class="footer__item">
+                <a
+                    class="footer__link"
+                    href="mailto:pedropinto.web@gmail.com?subject=Hello%20from%20Mero"
+                    >Say hello</a
+                >
+            </li>
+            <li class="footer__item">
+                <a
+                    class="footer__link"
+                    href="/blog/feed.xml"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >RSS feed</a
+                >
+            </li>
+        </ul>
+    </div>
+</footer>
+
+        <!--  -->
+        <script
+    src="/blog/assets/javascript/bundle.js"
+    type="module"
+></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script
+    async
+    rel="preconnect"
+    src="https://www.googletagmanager.com/gtag/js?id=UA-13159742-2"
+></script>
+<script>
+    window.dataLayer = window.dataLayer || []
+    function gtag() {
+        dataLayer.push(arguments)
+    }
+    gtag("js", new Date())
+
+    gtag("config", "UA-13159742-2")
+</script>
+
+
+
+    </body>
+</html>
