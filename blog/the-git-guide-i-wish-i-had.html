@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/blog/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/blog/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/blog/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/blog/site.webmanifest" />
+        <link rel="mask-icon" href="/blog/safari-pinned-tab.svg" color="#c14953" />
+        <meta name="msapplication-TileColor" content="#f4f2f3" />
+        <meta name="theme-color" content="#c14953" />
+
+        <link
+            rel="alternate"
+            type="application/rss+xml"
+            href="https://pedropinto.me/feed.xml"
+            title="Mero"
+        />
+
+        <link rel="stylesheet" href="/blog/assets/css/jekyll-mero.css" />
+
+        
+        <link rel="stylesheet" href="/blog/assets/css/themes/theme-prefers-dark.css" />
+        
+
+        <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>The Git guide I wish I had | Mero</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="The Git guide I wish I had" />
+<meta name="author" content="Pedro Pinto" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="When I started I didn’t even knew Git existed. But when I did, it didn’t feel like a very straight forward tool to learn." />
+<meta property="og:description" content="When I started I didn’t even knew Git existed. But when I did, it didn’t feel like a very straight forward tool to learn." />
+<link rel="canonical" href="https://pedropinto.me/blog/the-git-guide-i-wish-i-had" />
+<meta property="og:url" content="https://pedropinto.me/blog/the-git-guide-i-wish-i-had" />
+<meta property="og:site_name" content="Mero" />
+<meta property="og:image" content="https://pedropinto.me/blog/assets/images/posts/the-git-guide-i-wish-i-had/cover.png" />
+<meta property="og:image:height" content="900" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-02-20T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@pmpinto" />
+<meta name="twitter:creator" content="@pmpinto" />
+<script type="application/ld+json">
+{"description":"When I started I didn’t even knew Git existed. But when I did, it didn’t feel like a very straight forward tool to learn.","author":{"@type":"Person","name":"Pedro Pinto"},"@type":"BlogPosting","url":"https://pedropinto.me/blog/the-git-guide-i-wish-i-had","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://pedropinto.me/blog/assets/images/open_graph.png"},"name":"Pedro Pinto"},"image":{"width":1200,"height":900,"url":"https://pedropinto.me/blog/assets/images/posts/the-git-guide-i-wish-i-had/cover.png","@type":"imageObject"},"headline":"The Git guide I wish I had","dateModified":"2021-02-20T00:00:00+00:00","datePublished":"2021-02-20T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://pedropinto.me/blog/the-git-guide-i-wish-i-had"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    </head>
+
+    <body class="preload">
+        <nav class="navigation">
+    <ul class="navigation__list">
+        <li class="navigation__item navigation__item--home">
+            <a href="/blog/" class="navigation__link" aria-label="Go back home">
+                <span class="navigation__icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M10 19v-5h4v5a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6a1 1 0 0 0-1.34 0l-8.36 7.53a.5.5 0 0 0 .33.87H5v7a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1z"/></svg>
+
+                </span>
+            </a>
+        </li>
+        <li class="navigation__item">
+            <a
+                href="/blog/about/"
+                class="navigation__link"
+                aria-label="Go to about page"
+            >
+                <span class="navigation__icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v1c0 .55.45 1 1 1h14c.55 0 1-.45 1-1v-1c0-2.66-5.33-4-8-4z"/></svg>
+
+                </span>
+            </a>
+        </li>
+
+        <li class="navigation__item navigation__item--category">
+            <button
+                class="navigation__button js-category-toggle"
+                aria-label="Toggle list of categories"
+            >
+                <span class="navigation__icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M2.53 19.65l1.34.56v-9.03l-2.43 5.86a2.02 2.02 0 0 0 1.09 2.61zm19.5-3.7L17.07 3.98a2.01 2.01 0 0 0-2.6-1.08L7.1 5.95a2 2 0 0 0-1.08 2.6l4.96 11.97a2 2 0 0 0 2.6 1.08l7.36-3.05a2 2 0 0 0 1.09-2.6zM7.88 8.75c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-2 11c0 1.1.9 2 2 2h1.45l-3.45-8.34v6.34z"/></svg>
+
+                </span>
+            </button>
+            <ul class="navigation__sublist">
+                 
+                <li class="navigation__item">
+                    <span class="navigation__muted">#</span
+                    ><a
+                        href="/blog/category/jobs/"
+                        class="navigation__link"
+                        >jobs</a
+                    >
+                    <span class="navigation__amount">
+                        <span class="navigation__muted">2</span>
+                    </span>
+                </li>
+                 
+                <li class="navigation__item">
+                    <span class="navigation__muted">#</span
+                    ><a
+                        href="/blog/category/interviews/"
+                        class="navigation__link"
+                        >interviews</a
+                    >
+                    <span class="navigation__amount">
+                        <span class="navigation__muted">1</span>
+                    </span>
+                </li>
+                 
+                <li class="navigation__item">
+                    <span class="navigation__muted">#</span
+                    ><a
+                        href="/blog/category/hello/"
+                        class="navigation__link"
+                        >hello</a
+                    >
+                    <span class="navigation__amount">
+                        <span class="navigation__muted">1</span>
+                    </span>
+                </li>
+                 
+                <li class="navigation__item">
+                    <span class="navigation__muted">#</span
+                    ><a
+                        href="/blog/category/theme/"
+                        class="navigation__link"
+                        >theme</a
+                    >
+                    <span class="navigation__amount">
+                        <span class="navigation__muted">1</span>
+                    </span>
+                </li>
+                 
+                <li class="navigation__item">
+                    <span class="navigation__muted">#</span
+                    ><a
+                        href="/blog/category/health/"
+                        class="navigation__link"
+                        >health</a
+                    >
+                    <span class="navigation__amount">
+                        <span class="navigation__muted">1</span>
+                    </span>
+                </li>
+                 
+                <li class="navigation__item">
+                    <span class="navigation__muted">#</span
+                    ><a
+                        href="/blog/category/covid-19/"
+                        class="navigation__link"
+                        >covid-19</a
+                    >
+                    <span class="navigation__amount">
+                        <span class="navigation__muted">1</span>
+                    </span>
+                </li>
+                 
+                <li class="navigation__item">
+                    <span class="navigation__muted">#</span
+                    ><a
+                        href="/blog/category/productivity/"
+                        class="navigation__link"
+                        >productivity</a
+                    >
+                    <span class="navigation__amount">
+                        <span class="navigation__muted">2</span>
+                    </span>
+                </li>
+                 
+                <li class="navigation__item">
+                    <span class="navigation__muted">#</span
+                    ><a
+                        href="/blog/category/giveaway/"
+                        class="navigation__link"
+                        >giveaway</a
+                    >
+                    <span class="navigation__amount">
+                        <span class="navigation__muted">1</span>
+                    </span>
+                </li>
+                 
+                <li class="navigation__item">
+                    <span class="navigation__muted">#</span
+                    ><a
+                        href="/blog/category/operating-systems/"
+                        class="navigation__link"
+                        >operating-systems</a
+                    >
+                    <span class="navigation__amount">
+                        <span class="navigation__muted">1</span>
+                    </span>
+                </li>
+                 
+                <li class="navigation__item">
+                    <span class="navigation__muted">#</span
+                    ><a
+                        href="/blog/category/linux/"
+                        class="navigation__link"
+                        >linux</a
+                    >
+                    <span class="navigation__amount">
+                        <span class="navigation__muted">1</span>
+                    </span>
+                </li>
+                 
+                <li class="navigation__item">
+                    <span class="navigation__muted">#</span
+                    ><a
+                        href="/blog/category/tools/"
+                        class="navigation__link"
+                        >tools</a
+                    >
+                    <span class="navigation__amount">
+                        <span class="navigation__muted">1</span>
+                    </span>
+                </li>
+                 
+                <li class="navigation__item">
+                    <span class="navigation__muted">#</span
+                    ><a
+                        href="/blog/category/git/"
+                        class="navigation__link"
+                        >git</a
+                    >
+                    <span class="navigation__amount">
+                        <span class="navigation__muted">1</span>
+                    </span>
+                </li>
+                 
+                <li class="navigation__item">
+                    <span class="navigation__muted">#</span
+                    ><a
+                        href="/blog/category/guides/"
+                        class="navigation__link"
+                        >guides</a
+                    >
+                    <span class="navigation__amount">
+                        <span class="navigation__muted">1</span>
+                    </span>
+                </li>
+                
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+        <main>
+            <article class="post">
+    <div class="page__wrapper">
+        <h1 class="post__title">The Git guide I wish I had</h1>
+
+        <time class="post__date" datetime="2021-02-20">
+            February 20, 2021
+        </time>
+
+        <div class="post__content">
+            <p><img src="assets/images/posts/the-git-guide-i-wish-i-had/cover.png" alt="Branches in a Git tree" /></p>
+
+<p class="lead">Back when I started working for the web I was working in a team of 3. All of us at some point would need to edit the same files. And in some rare occasions, more than 1 person on the same file.</p>
+
+<p>All our files where in a central place, a server, for what is worth. We did have a local copy on our computers. But it was being automatically synced with the server as soon as a file was changed — like Dropbox.</p>
+
+<p>See the problem?<br />
+We would easily run into each other when doing these kind of changes. So our safety system, which appeared organically since we were all on the same office, was verbally checking if anyone was editing that file at that time. First come, first served.</p>
+
+<p>It was also common to ask the person editing the file we were about to edit to do a small edit for us to prevent messing with their work in progress. This brings a few more issues, but I’m not going to touch on those.</p>
+
+<h1 id="whats-git-and-why-its-useful">What’s Git and why it’s useful</h1>
+<p><a href="https://git-scm.com/">Git</a> is a version control software. In other words, Git allows teams of any size to collaborate on the same codebase through different versions of that codebase and a process of merging them back together.</p>
+
+<p>Git comes installed in Linux and macOS, so you can start using it right away. The same can’t be said about Windows, which requires a manual installation.</p>
+
+<p>So how does it work?</p>
+
+<p class="lead">Each developer has a local copy of the codebase on their computer.</p>
+
+<p>The server has another one — your source of truth. All developers connect to the server to either <code class="highlighter-rouge">pull</code> the latest updates or <code class="highlighter-rouge">push</code> their work.</p>
+
+<p>It solves the problem of having to check if someone is editing a specific file before you add your own updates. Worst case scenario one of your teammates will have to solve a conflict on that file. But that’s not always the case.</p>
+
+<p>When I started I didn’t know better. I didn’t even knew Git existed. But when I did, it didn’t feel like a very straight forward tool to learn.</p>
+
+<p>Now that I’ve been using it for a few years and it feels more familiar, although I’m certain there’s still plenty to learn, I wanted to share the commands I use more often. A guide that I would have liked to read back when I started using Git.</p>
+
+<h1 id="do-you-need-to-use-cli-to-use-git">Do you need to use CLI to use Git?</h1>
+<p>There are plenty of Git visual applications you can use to bypass a command line interface altogether. I started that way, actually.<br />
+I installed one of the most basic applications I could find in hope this whole learning process would be easier for me.</p>
+
+<p>The issue with that approach is that, naturally, the most basic of the applications won’t have all the features you might need. So what I ended up facing more and more often was situations where I would need to perform an action that the application didn’t implement.</p>
+
+<p>Perhaps that was a sign I was starting to dip into not-so-basic scenarios.<br />
+So I started using the CLI for those cases. I would search online how to do what I needed with Git, and try it out.</p>
+
+<p>At some point I thought: Why am I using an application to do the basic stuff and then do the more advanced stuff through CLI?<br />
+I mean, how hard would it be to do <em>everything</em> from CLI? I gave it a try. And never looked back.</p>
+
+<p>There’s one thing I believe visual applications do better than the CLI: graphs. Naturally, a more visual feature works better in a visual application than a command line. But I rarely need it. Even with CLI, I rarely need it, hence why it’s missing from this guide.</p>
+
+<h1 id="getting-started">Getting started</h1>
+<p>There are 2 ways you can start using Git in a project. You either initialize Git on a local folder or you download/clone an already existing project.</p>
+
+<p class="lead">Tip: Projects that use Git are often referred to as “repositories”, or “repos” for short.</p>
+
+<h2 id="init">Init</h2>
+<p>When you already have a local non-versioned project and just wish to start versioning it with Git, you can do that by running:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git init</code></pre></figure>
+
+<p>This will create a <code class="highlighter-rouge">.git</code> subdirectory under the directory the init command was ran. The <code class="highlighter-rouge">.git</code> directory is where all the Git magic will happen. Don’t worry about it.</p>
+
+<h2 id="clone">Clone</h2>
+<p>When you wish to collaborate on an already existing project, be it an open source project or a private project, you can download/clone it to your local computer by running:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git clone &lt;repo-url&gt;</code></pre></figure>
+
+<p>For instance, for Microsoft’s Visual Studio Code you would do:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git clone https://github.com/microsoft/vscode.git</code></pre></figure>
+
+<h1 id="managing-remote">Managing remote</h1>
+<p>Whenever you hear about “remote” in the context of Git repositories, it refers to the central codebase. Your source of truth.</p>
+
+<p>When you clone an existing repo, you can check where the repo comes from and where Git will push your changes to, by running:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git remote <span class="nt">-v</span></code></pre></figure>
+
+<p>The output should be a list of <code class="highlighter-rouge">fetch</code> and <code class="highlighter-rouge">push</code> URLs, usually just 2, labelled as <code class="highlighter-rouge">origin</code>.</p>
+
+<p>But when you initialize Git in a local folder, it doesn’t have any information where it should push your changes. What you need to do is run:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git remote add origin &lt;url&gt;</code></pre></figure>
+
+<p>For instance:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git remote add origin https://github.com/microsoft/vscode.git</code></pre></figure>
+
+<p>This is useful when you create a new repository in GitHub for instance, to hold a project you already have in your computer. You link them together with this command.</p>
+
+<h1 id="checking-the-current-state">Checking the current state</h1>
+<p>After changing some files locally on your computer, you might need to check what changes you’re about to introduce to the repo.</p>
+
+<p>You can get a list of the files you touched by running:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git status</code></pre></figure>
+
+<p>The output can be split in 3 different sections:</p>
+<ol>
+  <li>Staged changes — Files that will be used for commit</li>
+  <li>Unstaged changes — Files that will <em>not</em> be used for the next commit</li>
+  <li>Untracked files — Files that are new to the repo</li>
+</ol>
+
+<h1 id="ask-git-to-ignore-some-files">Ask Git to ignore some files</h1>
+<p>By default Git attempts to track every single file inside a repo. But sometimes that’s not what you want. Let’s say you have a <code class="highlighter-rouge">server-credentials.json</code> file in your project that you don’t want to track/upload to the remote repo for security reasons.</p>
+
+<p>You can create a file named <code class="highlighter-rouge">.gitignore</code> on the root of your project and just type <code class="highlighter-rouge">server-credentials.json</code> on the first line.
+You can also ignore all the files from a specific folder like: <code class="highlighter-rouge">credentials/*</code>
+Or all the <code class="highlighter-rouge">.txt</code> files like: <code class="highlighter-rouge">*.txt</code></p>
+
+<p>The <code class="highlighter-rouge">.gitignore</code> file by itself is a file you might want to avoid ignoring, so you can keep all collaborators in sync on which files should be ignored.</p>
+
+<h1 id="check-what-changed-within-a-specific-file">Check what changed within a specific file</h1>
+<p>Sometimes you need more than a list of files that changed. You need to see exactly what’s changing inside a file. You can do that with:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git diff &lt;file-path&gt;</code></pre></figure>
+
+<p>This will get you in a read only environment from which you can get out of by pressing <code class="highlighter-rouge">q</code>.</p>
+
+<p>You can also see what’s changing on <em>every</em> file with:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git diff</code></pre></figure>
+
+<p>Another use case for this command is using the <code class="highlighter-rouge">--staged</code> flag, like:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git diff <span class="nt">--staged</span></code></pre></figure>
+
+<p>Which will list all the changes happening, but only on the files that are on stage.</p>
+
+<h1 id="checking-the-commit-history">Checking the commit history</h1>
+<p>At some point during development you will need to check the history (or log) of the repository. You can do that with:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git log</code></pre></figure>
+
+<p>The output is an extensive list containing a bunch of information about the commits, including author, date, commit hash and message, sorted with the most recent commit on top.</p>
+
+<p>Again, press <code class="highlighter-rouge">q</code> to exit out of this mode.</p>
+
+<p>A more digestible way of looking back in history is by including the <code class="highlighter-rouge">--pretty=oneline</code> flag. It’s like a compact version of the <code class="highlighter-rouge">log</code> command. It strips a lot of the information and leaves only the commit hash and the first line from message of each commit.</p>
+
+<p>You can still argue that the commit hashes are not <em>that</em> digestible. They’re actually quite long. And to solve that I use the <code class="highlighter-rouge">--abbrev-commit</code> flag.</p>
+
+<p>So this is how I usually check the log:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git log <span class="nt">--pretty</span><span class="o">=</span>oneline <span class="nt">--abbrev-commit</span></code></pre></figure>
+
+<h1 id="adding-files-to-stage">Adding files to stage</h1>
+<p>I have been mentioning “stage” here and there, but I still didn’t touch on how to actually add files to stage. And it’s very simple, actually.</p>
+
+<p>To add a single file (or multiple) to stage you do:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git add &lt;file-path-1&gt; &lt;file-path-2&gt; &lt;file-path-n&gt;</code></pre></figure>
+
+<p>To add <em>all</em> the changed files to stage you do:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git add .</code></pre></figure>
+
+<p>My workflow usually consists of running <code class="highlighter-rouge">git status</code> to get a list of all the changed files, followed by either variation of the <code class="highlighter-rouge">add</code> command, depending on what I need.</p>
+
+<h2 id="how-to-pick-one-over-the-other">How to pick one over the other</h2>
+<p>It’s probably a good time to mention when to use one over the other.
+Think of it as steps. Just like you’re able to undo some changes in your computer, you might also need to <code class="highlighter-rouge">revert</code> a change in a Git repo.</p>
+
+<p>Now, it would be a real pain if when writing a document you could only undo a big portion of the document, say chapters.
+Ideally, you would like to be able to undo smaller portions, like a small group of words.</p>
+
+<p>This is why you should only add to stage (and therefore include in a commit) the files you really need for the specific change you’re introducing to work/make sense.
+For instance, if I’m adding a new page I might want to group in a single commit the CSS, the HTML and the JavaScript file required for that page to work properly. But I might not want to add a quick fix I did on another CSS file.</p>
+
+<p>This way, there would be 2 commits:</p>
+<ol>
+  <li>Adding a new page</li>
+  <li>Fixing a CSS issue</li>
+</ol>
+
+<p>At a later point, I might realize this CSS fix is actually introducing other issues that I want to avoid. By having these changes in separate commits I’m able to undo only one of them without compromising all the work of the new page.</p>
+
+<h1 id="removing-a-file-from-stage">Removing a file from stage</h1>
+<p>Sometimes it’s easier to add all the files to stage with <code class="highlighter-rouge">git add .</code> and then remove 1 file instead of adding every single file one by one with <code class="highlighter-rouge">git add &lt;file-path&gt;</code>.</p>
+
+<p>But how do you remove a file that’s already been added to stage?</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git reset &lt;file-path&gt;</code></pre></figure>
+
+<p>Just like you would do to add a file, but instead of the <code class="highlighter-rouge">add</code> command you use <code class="highlighter-rouge">reset</code>. You won’t be changing the contents of the file, you’re just telling Git you don’t want to include this file in your next commit.</p>
+
+<h1 id="committing-to-your-changes">Committing to your changes</h1>
+<p>So what do you do after adding all the necessary files to stage? You <code class="highlighter-rouge">commit</code> them. It’s like saying “These are really the changes I want to introduce — signed [you]”. It’s a commitment!</p>
+
+<p>Right after doing <code class="highlighter-rouge">git add</code> (which you can do multiple times), you do:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git commit</code></pre></figure>
+
+<p>You’ll notice that when you do this, the command line changes a bit and you seem to be stuck — rest assure, you’re not.
+The interface you’re now on is called Vim, and it’s a pain to work with for anyone who’s not used to it.</p>
+
+<p>A few quick tips:</p>
+<ul>
+  <li>Pressing <code class="highlighter-rouge">i</code> puts you in “insert” mode</li>
+  <li>Pressing <code class="highlighter-rouge">Esc</code> exits out of your current mode</li>
+  <li>Entering <code class="highlighter-rouge">:q</code> quits Vim without writing anything</li>
+  <li>Entering <code class="highlighter-rouge">:wq</code> saves the file and then quits Vim</li>
+</ul>
+
+<p>The workflow would be something like:</p>
+<ol>
+  <li><code class="highlighter-rouge">git commit</code></li>
+  <li>Press <code class="highlighter-rouge">i</code> to write your commit message</li>
+  <li>Press <code class="highlighter-rouge">Esc</code> when done</li>
+  <li>Enter <code class="highlighter-rouge">:wq</code> to save your commit message and quit Vim</li>
+</ol>
+
+<p>If you want to double check the commit went through you can run the <a href="#checking-the-commit-history">log command</a>.</p>
+
+<h2 id="but-theres-an-easier-way">But there’s an easier way</h2>
+<p>The best practices dictate that the first line of your commit message should be short, around 80 characters, give or take.<br />
+With this in mind, there’s a flag we can use to set our commit message while avoiding entering Vim altogether:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git commit <span class="nt">-m</span> <span class="s2">"&lt;your message&gt;"</span></code></pre></figure>
+
+<p>For instance:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git commit <span class="nt">-m</span> <span class="s2">"Add new contact page"</span></code></pre></figure>
+
+<p>But sometimes you will need to add more than just a single line. For those cases you can omit the quote at the end and still hit <code class="highlighter-rouge">Enter</code>, like:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git commit <span class="nt">-m</span> <span class="s2">"Add new contact page&lt;Enter&gt;</span></code></pre></figure>
+
+<p>This will allow you to add more lines to your commit message.</p>
+
+<p class="lead">Tip: Always leave one empty line right after the first line, for extra clarity.</p>
+
+<p>When you’re done, just add a closing quote sign to your message and it should be good.</p>
+
+<h1 id="forgot-something-on-your-latest-commit">Forgot something on your latest commit?</h1>
+<p>On some occasions you will need to either fix a commit message or add some more changes to the latest commit. If you’re just tweaking the commit message you can do that with:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git commit <span class="nt">--amend</span></code></pre></figure>
+
+<p>This will get you into Vim again, but at this point you should know how to deal with it, basically:</p>
+<ol>
+  <li>Press <code class="highlighter-rouge">i</code> to enter “insert” mode</li>
+  <li>Navigate with the cursor keys to where you want to fix the message</li>
+  <li>Do the actual changes to the commit message</li>
+  <li>Press <code class="highlighter-rouge">Esc</code> to exit out of “insert” mode</li>
+  <li>Enter <code class="highlighter-rouge">:wq</code> to save your new message and quit Vim</li>
+</ol>
+
+<p>If you’re adding new file changes to the latest commit you should:</p>
+<ol>
+  <li><code class="highlighter-rouge">git add &lt;all the files you need to add&gt;</code></li>
+  <li><code class="highlighter-rouge">git commit --amend</code></li>
+  <li>At this point if you don’t want to change the message just enter <code class="highlighter-rouge">:wq</code> to save the commit, otherwise follow the steps above to add a new message</li>
+</ol>
+
+<h1 id="undoing-a-commit">Undoing a commit</h1>
+<p>It doesn’t happen every day, but you’ll appreciate that time you (or your team) splitted the work in multiple commits so you can rely on <code class="highlighter-rouge">revert</code>.</p>
+
+<p>It works like this:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git revert &lt;commit-hash&gt;</code></pre></figure>
+
+<p>This will create a new commit, reverting the changes introduced in that commit.
+And you can revert any commit in the commit history, not just the last one.</p>
+
+<p>Where do you find the commit hash? You can either rely on the <a href="#checking-the-commit-history">log command</a> or check it in whatever service you’re using to host your repo, like GitHub.</p>
+
+<h1 id="branches">Branches</h1>
+<p>So far, we have been touching on files and commits, but we’re missing an important part of Git: branches.</p>
+
+<p class="lead">Just like a tree, a Git repo also has branches.</p>
+
+<p>There’s a main branch, usually named <code class="highlighter-rouge">master</code>.
+Recently though, <a href="https://github.blog/changelog/2021-01-19-support-for-renaming-an-existing-branch/">GitHub</a> has given their users the ability to rename branches, including <code class="highlighter-rouge">master</code>. So to avoid the “master” term, this branch can also be named <code class="highlighter-rouge">main</code>.</p>
+
+<p>Then you can have a number of branches derived from the main one but not necessarily in the same state.</p>
+
+<p>Unlike a tree, at some point, these derived branches connect back to the main branch through a processed called merging.</p>
+
+<p>So what’s the point of having another branch?<br />
+Remember when I mentioned Git is a version control software? The different versions live in different branches.
+Each branch will be a copy of the codebase in a different state.</p>
+
+<p>It’s extremely useful when you need to implement a new feature or a fix, for instance. You go into the main branch, and create a new branch from it to hold your feature. In other words, your feature is going to be built on top of the most recent version of the codebase, but in a separate environment.</p>
+
+<h1 id="listing-branches">Listing branches</h1>
+<p>Before switching to another branch you should first check what branches already exist to avoid attempting to create a branch with the same name of an already existing one. How do you do that?</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git branch</code></pre></figure>
+
+<p>Just like <code class="highlighter-rouge">git diff</code>, this will get you in a read only environment from which you can get out of by pressing <code class="highlighter-rouge">q</code>.</p>
+
+<p>If you want to include all the remote branches as well, you do:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git branch <span class="nt">-a</span></code></pre></figure>
+
+<p>At some point, you have created so many branches that it’s getting hard to find the one you want from such a big list. A trick I usually rely on is combining the <code class="highlighter-rouge">grep</code> Unix command along with <code class="highlighter-rouge">git branch</code>. Basically, filter the results of <code class="highlighter-rouge">git branch</code> with a pattern, like this:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git branch | <span class="nb">grep </span>dropdown</code></pre></figure>
+
+<p>This will list all the branches whose names include <code class="highlighter-rouge">dropdown</code>.</p>
+
+<h1 id="creating-a-new-branch">Creating a new branch</h1>
+<p>As soon as you start working in a team, you will need to create a branch of your own so you don’t step on each other’s toes while implementing a bunch of different features/fixes.
+You can do that with:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git branch &lt;name-of-your-branch&gt;</code></pre></figure>
+
+<p>For instance:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git branch feature/fancy-dropdown</code></pre></figure>
+
+<p>Notice that this won’t automatically switch you to the new branch. It just creates it. More on that on the <a href="#checking-other-branches">checkout command</a>.</p>
+
+<h1 id="deleting-a-branch">Deleting a branch</h1>
+<p>To avoid the scenario mentioned above where the list of local branches is so big that you can barely find what you’re looking for, you can delete local branches that were already merged — basically, branches whose job is done. And this can be done with:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git branch <span class="nt">-d</span> &lt;name-of-your-branch&gt;</code></pre></figure>
+
+<p>For instance:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git branch <span class="nt">-d</span> feature/fancy-dropdown</code></pre></figure>
+
+<p>Have in mind that you won’t be able to delete a branch if you’re currently on it. Just like you wouldn’t want to cut through a tree branch while sitting on it. You do it by jumping on another branch (any other) and delete the one you don’t want anymore.</p>
+
+<h1 id="checking-other-branches">Checking other branches</h1>
+<p>So you created a new branch with <code class="highlighter-rouge">git branch &lt;name-of-your-branch&gt;</code>. And you noticed you are still on the same branch as you were.
+How do you switch to another branch?</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git checkout &lt;name-of-your-branch&gt;</code></pre></figure>
+
+<p>The <code class="highlighter-rouge">checkout</code> command has multiple uses though, depending on what you ask it to do.<br />
+Hang on tight and let’s look at other use cases.</p>
+
+<h1 id="creating-a-new-branch-and-switching-to-it-at-the-same-time">Creating a new branch and switching to it at the same time</h1>
+<p>There’s a more convenient way to create a branch, which also switches to it automatically. Introducing the <code class="highlighter-rouge">-b</code> flag:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git checkout <span class="nt">-b</span> &lt;your-new-branch&gt;</code></pre></figure>
+
+<h1 id="switching-to-the-previous-branch">Switching to the previous branch</h1>
+<p>This is one of those gems that I personally got very excited when I found out about it. It’s an easy and fast way to switch to whatever branch you were previously on.<br />
+Say you are on your feature branch and you need to checkout <code class="highlighter-rouge">master</code> for some reason. When you’re done, you want to go back to your feature branch. If you don’t remember the name of your feature branch you would have to <a href="#listing-branches">list all the branches</a> and <em>then</em> switch to it.</p>
+
+<p>An easier way is:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git checkout @<span class="o">{</span><span class="nt">-1</span><span class="o">}</span></code></pre></figure>
+
+<p>It’s like hitting the “back” button of your browser.</p>
+
+<h1 id="discarding-changes-in-files">Discarding changes in files</h1>
+<p>The <code class="highlighter-rouge">checkout</code> command can also be used to discard changes in a specific file, or all the files at once.</p>
+
+<p>It’s useful when you’re trying out an approach for a problem and you realise you’re going down a route you’re not happy with, and you would like to start over. Or when quickly debugging something on the latest <code class="highlighter-rouge">master</code> and you want to avoid leaving those changes you introduced just for the sake of debugging.</p>
+
+<p>You can discard changes per file with:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git checkout &lt;file-path&gt;</code></pre></figure>
+
+<p>Or discard the changes in all the files with:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git checkout .</code></pre></figure>
+
+<h1 id="syncing-changes">Syncing changes</h1>
+<p>Something you should be doing often while working with a versioned environment is making sure your working branch is up to date with its remote counterpart. Basically, that your local codebase isn’t getting too outdated, which would increase the chances of creating conflicts at a later point.</p>
+
+<p>You do that with:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git pull</code></pre></figure>
+
+<p>This will <code class="highlighter-rouge">fetch</code> all the recent changes in the branch you’re working at and <code class="highlighter-rouge">merge</code> them automatically in your local branch. This way you know you have the most recent updates in your local branch.</p>
+
+<p>But when you’re done with your work, you will need to <code class="highlighter-rouge">push</code> your changes.<br />
+Which you can do with:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git push</code></pre></figure>
+
+<p>And sometimes, you need to work on a branch that was created on another computer and pushed to the remote repo. Say you’re helping a coworker with his feature and you need to edit the branch he’s working at.
+If you attempt to <code class="highlighter-rouge">git checkout &lt;name-of-his-branch&gt;</code> it might not work, because the branch was created on his computer and was just recently pushed to remote. Your local codebase doesn’t know about it.</p>
+
+<p>To fix that, you first need to download the most recent updates the remote repo has, with:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git fetch</code></pre></figure>
+
+<p>This won’t write anything to your current branch. It just downloads references which you can now refer to, for instance, switching to your coworker’s branch.</p>
+
+<h1 id="picking-a-commit-from-another-branch">Picking a commit from another branch</h1>
+<p>Let’s say you’re working on a feature that will need a file that, conveniently, a coworker of yours had already committed to another branch they’re working at. If they did it <a href="#how-to-pick-one-over-the-other">the right way</a>, this commit will only contain the necessary changes and nothing else.</p>
+
+<p>If that’s the case, you can use:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git cherry-pick &lt;commit-hash&gt;</code></pre></figure>
+
+<p>This will place the changes of said commit on top of your local branch, so you can now use them in your feature.
+Again, these commit hashes can be found through the <a href="#checking-the-commit-history">log command</a>, or navigating through the remote repo with a service like GitHub.</p>
+
+<h1 id="saving-your-local-changes-without-committing">Saving your local changes without committing</h1>
+<p>What if you have changes in your local branch that you don’t want to commit yet, because they’re not ready, but you also don’t want to loose?</p>
+
+<p>You can find yourself in this scenario while implementing a feature in your feature branch and suddenly you have the need to checkout another branch. What do you do with the changes you were doing?</p>
+
+<p>You <code class="highlighter-rouge">stash</code> them, with:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git stash save <span class="nt">-u</span> <span class="s2">"&lt;some clear message so you remember what it contains&gt;"</span></code></pre></figure>
+
+<p>This will keep your changes in a safe place, without writing them to the history of your branch just yet. You will notice the changes are now gone from your working branch. They’re safe in another place, don’t worry.</p>
+
+<p class="lead">Tip: The stash lives on the repository, not the branch.</p>
+
+<p>Your working branch should now be clean, and therefore you can easily switch between branches without worrying about loosing your work.</p>
+
+<p>If you need to check every stash you had saved so far you can do it with:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git stash list</code></pre></figure>
+
+<p>And when you’re ready to apply the changes back on your feature branch, you pick the stash ID from the list and <code class="highlighter-rouge">apply</code> them.<br />
+For applying the most recently saved changes you do:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git stash apply stash@<span class="o">{</span>0<span class="o">}</span></code></pre></figure>
+
+<h1 id="bringing-your-work-into-another-branch">Bringing your work into another branch</h1>
+<p>As I mentioned above, when you’re done with your feature, your branch should go back into the main branch.<br />
+You can do it with:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git merge &lt;branch-name&gt;</code></pre></figure>
+
+<p>For instance:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git merge master</code></pre></figure>
+
+<p>And now we have a couple of different possible scenarios.</p>
+
+<h2 id="there-are-no-conflicts">There are no conflicts</h2>
+<p>When the changes in your local branch include only new files, chances are you won’t face any conflict.</p>
+
+<p>Conflicts occur when you’re attempting to merge 2 versions of the same file, and Git doesn’t have a clear way to do it. When this happens, you will have to manually solve them.<br />
+Note that Git will attempt to solve conflicts for you before asking you to do it. But when it lacks the knowledge, it calls for help.</p>
+
+<h2 id="there-are-conflicting-files">There are conflicting files</h2>
+<p>When a conflict occurs, Git will clearly tell you in the command line, with something like:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Auto-merging your-page.html
+CONFLICT <span class="o">(</span>content<span class="o">)</span>: Merge conflict <span class="k">in </span>your-page.html
+Automatic merge failed<span class="p">;</span> fix conflicts and <span class="k">then </span>commit the result.</code></pre></figure>
+
+<p>Besides, you need to be aware that the commit that is usually generated from the <code class="highlighter-rouge">merge</code> command is on hold, until you solve the conflicts.</p>
+
+<p>What you need to to next is open the file marked with a conflict and solve it.
+It should look something like this:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">&lt;&lt;&lt;&lt;&lt;&lt;</span> HEAD
+  &lt;h1&gt;My new heading&lt;/h1&gt;
+<span class="o">======</span>
+  &lt;h1&gt;Old heading&lt;/h1&gt;
+<span class="o">&gt;&gt;&gt;&gt;&gt;&gt;</span> master</code></pre></figure>
+
+<p>Let’s look at it together.</p>
+
+<p>We have 2 sections there:</p>
+<ul>
+  <li>The first one is labelled as <code class="highlighter-rouge">HEAD</code>, which is the state your working branch.</li>
+  <li>The second one is labelled as whatever branch you’re attempting to merge with, in this case, <code class="highlighter-rouge">master</code>.</li>
+</ul>
+
+<p>Currently, your file has the changes from 2 versions. You can only have one — whatever that means to you.</p>
+
+<p>The conflict gets resolved when you remove <code class="highlighter-rouge">&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code>, <code class="highlighter-rouge">======</code> and <code class="highlighter-rouge">&gt;&gt;&gt;&gt;&gt;&gt; master</code> from your file.
+But if you <em>only</em> do that, you will end up with 2 <code class="highlighter-rouge">&lt;h1&gt;</code> in your file, which is most probably not what you want.</p>
+
+<p>To fully resolve the conflict, you will also need to remove one of the headings. And that’s where your knowledge comes in. You, better than Git, should know what the most updated state of your work should look like.</p>
+
+<p class="lead">Tip: Microsoft’s Visual Studio Code provides a very clear and visual way of dealing with Git conflicts.</p>
+
+<hr />
+
+<h1 id="my-usual-workflow-step-by-step">My usual workflow, step by step</h1>
+
+<p>Now I’m going to attempt to outline what my usual workflow is like when implementing a feature. Hopefully it gets clearer.
+I’m going to assume the repo is already downloaded to my local computer and configured as needed.</p>
+
+<ol>
+  <li><code class="highlighter-rouge">git checkout master</code> — Move to the main branch</li>
+  <li><code class="highlighter-rouge">git pull</code> — Download the most recent changes</li>
+  <li><code class="highlighter-rouge">git checkout -b feature/my-dropdown</code> — Create a new branch and switch to it</li>
+  <li>Fix an issue I just found in the codebase that will help me with my feature</li>
+  <li><code class="highlighter-rouge">git add .</code> — Add all the files to stage, since I only changed the necessary files for the fix</li>
+  <li><code class="highlighter-rouge">git commit -m "Fix an issue with dropdown styles in IE"</code> — Create a commit with the fix</li>
+  <li>Implement my new dropdown</li>
+  <li><code class="highlighter-rouge">git add dropdown.css dropdown.js</code> — Add the CSS and JS files to stage</li>
+  <li><code class="highlighter-rouge">git commit -m "Add new dropdown"</code> — Create a commit with the new dropdown</li>
+  <li>Refactor existing dropdowns to reuse my dropdown</li>
+  <li><code class="highlighter-rouge">git add .</code> — Add all the refactored files to stage</li>
+  <li><code class="highlighter-rouge">git commit -m "Refactor existing pages to reuse my dropdown"</code> — Create a commit with the refactor</li>
+  <li><code class="highlighter-rouge">git checkout master</code> — Switch to the main branch</li>
+  <li><code class="highlighter-rouge">git pull</code> — Make sure my local branch is up to date with remote</li>
+  <li><code class="highlighter-rouge">git checkout @{-1}</code> — Switch to the previous branch (my working branch)</li>
+  <li><code class="highlighter-rouge">git merge master</code> — Merge the latest updates from the main branch into my working branch</li>
+  <li>Conflicts happened, the merge commit is on hold</li>
+  <li>Solve the conflicts in all files</li>
+  <li><code class="highlighter-rouge">git add .</code> — Add all the files to stage</li>
+  <li><code class="highlighter-rouge">git commit</code> — Carry on with the Merge commit</li>
+  <li>While in Vim, press <code class="highlighter-rouge">Esc</code> and enter <code class="highlighter-rouge">:wq</code> to save the commit message and quit Vim</li>
+  <li><code class="highlighter-rouge">git push</code> — Upload my local branch to remote</li>
+</ol>
+
+<p>At this point I usually switch to GitHub and create a pull request there.<br />
+A pull request is basically you saying “Hey, can I get my changes from this branch into the main branch?”. It should go through a review process from your coworkers and when approved, your changes will be finally merged.</p>
+
+<h1 id="thats-all">That’s all</h1>
+<p>This took way longer than I expected. Even I was unaware I had so much to cover in this guide. But I also learned a couple of things here and there while writing it — that’s already positive!</p>
+
+<p>As you can see, even though there are many commands to know, my usual workflow consists only of <code class="highlighter-rouge">checkout</code>, <code class="highlighter-rouge">add</code>, <code class="highlighter-rouge">commit</code>, <code class="highlighter-rouge">pull</code>, <code class="highlighter-rouge">push</code> and <code class="highlighter-rouge">merge</code>. If you look at it this way, it’s not a lot.</p>
+
+<p>Hopefully this will give you a final push towards giving CLI another chance.</p>
+
+        </div>
+
+        
+            <ul class="category-list">
+     
+    <li class="category-list__item">
+        <span class="category-list__hashtag">#</span
+        ><a
+            href="/blog/category/tools/"
+            class="category-list__link"
+            aria-label="This post has the tools category. Read more from this category."
+            >tools</a
+        >
+    </li>
+     
+    <li class="category-list__item">
+        <span class="category-list__hashtag">#</span
+        ><a
+            href="/blog/category/git/"
+            class="category-list__link"
+            aria-label="This post has the git category. Read more from this category."
+            >git</a
+        >
+    </li>
+     
+    <li class="category-list__item">
+        <span class="category-list__hashtag">#</span
+        ><a
+            href="/blog/category/guides/"
+            class="category-list__link"
+            aria-label="This post has the guides category. Read more from this category."
+            >guides</a
+        >
+    </li>
+    
+</ul>
+
+        
+            <div class="author">
+    
+    <address class="author__text"><span class="author__at">@</span
+        ><a
+            href="http://twitter.com/pmpinto"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="author__link"
+            aria-label="Post written by Pedro Pinto. Go to their Twitter page."
+            title="Pedro Pinto"
+            >pmpinto</a
+        >
+    </address>
+    
+</div>
+
+        
+
+    </div>
+</article>
+
+        </main>
+
+        <footer class="footer">
+    <div class="page__wrapper">
+        <p class="footer__text">
+            Mero is a minimal and comfortable Jekyll theme.
+        </p>
+        <p class="footer__text">
+            Designed and built by
+            <a
+                class="footer__link"
+                href="https://pedropinto.me/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Pedro Pinto</a
+            >.
+        </p>
+        <ul class="footer__list">
+            <li class="footer__item">
+                <a
+                    class="footer__link"
+                    href="https://github.com/pmpinto/jekyll-mero"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Get Mero</a
+                >
+            </li>
+            <li class="footer__item">
+                <a
+                    class="footer__link"
+                    href="mailto:pedropinto.web@gmail.com?subject=Hello%20from%20Mero"
+                    >Say hello</a
+                >
+            </li>
+            <li class="footer__item">
+                <a
+                    class="footer__link"
+                    href="/blog/feed.xml"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >RSS feed</a
+                >
+            </li>
+        </ul>
+    </div>
+</footer>
+
+        <!--  -->
+        <script
+    src="/blog/assets/javascript/bundle.js"
+    type="module"
+></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script
+    async
+    rel="preconnect"
+    src="https://www.googletagmanager.com/gtag/js?id=UA-13159742-2"
+></script>
+<script>
+    window.dataLayer = window.dataLayer || []
+    function gtag() {
+        dataLayer.push(arguments)
+    }
+    gtag("js", new Date())
+
+    gtag("config", "UA-13159742-2")
+</script>
+
+
+
+    </body>
+</html>

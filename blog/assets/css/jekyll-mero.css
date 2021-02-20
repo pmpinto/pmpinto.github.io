@@ -102,7 +102,7 @@
 .post__content h1 a:hover::before, .post__content h2 a:hover::before, .post__content h3 a:hover::before, .post__content h4 a:hover::before, .post__content h5 a:hover::before, .post__content h6 a:hover::before { opacity: 1; }
 .post__content h1 a::before, .post__content h2 a::before, .post__content h3 a::before, .post__content h4 a::before, .post__content h5 a::before, .post__content h6 a::before { content: "§"; display: block; padding-right: 0.6180625rem; color: #93827f; font-size: 0.618em; font-family: "Roboto Slab", serif; font-weight: 300; position: absolute; left: -1em; bottom: 0.618em; opacity: 0.618; }
 .post__content h1 { font-size: 1.618rem; }
-.post__content h2 { font-size: 1rem; }
+.post__content h2 { font-size: 1.309rem; }
 .post__content p { margin: 1.618rem 0; font-weight: 300; }
 .post__content p code { padding: 0 0.6180625rem; }
 .post__content p img { max-width: 100%; }
@@ -115,6 +115,7 @@
 .post__content > ul, .post__content > ul ul, .post__content > ul ol, .post__content > ol, .post__content > ol ul, .post__content > ol ol { margin: 1rem 0; padding-left: 1rem; list-style: none; margin-left: 1.618rem; }
 .post__content > ul li, .post__content > ul ul li, .post__content > ul ol li, .post__content > ol li, .post__content > ol ul li, .post__content > ol ol li { font-weight: 300; }
 .post__content > ul li::before, .post__content > ul ul li::before, .post__content > ul ol li::before, .post__content > ol li::before, .post__content > ol ul li::before, .post__content > ol ol li::before { display: inline-block; color: #c14953; font-family: "Roboto Condensed", sans-serif; font-weight: 300; width: 1.618rem; margin-left: -1.618rem; }
+.post__content > ul li code, .post__content > ul ul li code, .post__content > ul ol li code, .post__content > ol li code, .post__content > ol ul li code, .post__content > ol ol li code { padding: 0 0.6180625rem; }
 .post__content > ul > li::before, .post__content > ul ul > li::before, .post__content > ol ul > li::before { content: "•"; font-size: 1rem; }
 .post__content > ol, .post__content > ol ol, .post__content > ul ol { counter-reset: ordered-list-item-count; }
 .post__content > ol > li, .post__content > ol ol > li, .post__content > ul ol > li { counter-increment: ordered-list-item-count; }
@@ -127,7 +128,7 @@
 .post__content figure { margin: 1.618rem 0; text-align: center; }
 .post__content figure img { max-width: 100%; border-radius: 0.26475rem; }
 .post__content figure figcaption { font-family: "Roboto Slab", serif; font-size: 0.8540625rem; color: #93827f; line-height: 1.618; font-weight: 300; text-align: center; }
-.post__content figure.highlight { position: relative; }
+.post__content figure.highlight { position: relative; text-align: left; }
 .post__content figure.highlight .lineno { min-width: 2em; user-select: none; color: rgba(130, 112, 109, 0.382); font-size: 1rem; }
 .post__content figure.highlight code { display: block; padding: 1rem; overflow-x: scroll; border-radius: 0.26475rem; }
 .post__content figure.highlight code::before { content: attr(data-lang); position: absolute; right: 0.6180625rem; top: 0.6180625rem; color: #82706d; font-family: "Roboto Mono", monospace; font-size: 0.8540625rem; line-height: 1; font-weight: 300; }

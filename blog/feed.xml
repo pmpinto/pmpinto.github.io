@@ -4,7 +4,23 @@
         <title>Mero</title>
         <link>https://pedropinto.me</link>
         <description>A collection of points of view, opinions, suggestions and completely random thoughts by Pedro Pinto.</description>
-        <lastBuildDate>Sat, 09 May 2020 11:52:21 +0000</lastBuildDate>
+        <lastBuildDate>Sat, 20 Feb 2021 23:31:51 +0000</lastBuildDate>
+        
+        <item>
+            <title>The Git guide I wish I had</title>
+            <link>
+                https://pedropinto.me/the-git-guide-i-wish-i-had
+            </link>
+            <description>
+                &lt;p&gt;&lt;img src=&quot;assets/images/posts/the-git-guide-i-wish-i-had/cover.png&quot; alt=&quot;Branches in a Git tree&quot; /&gt;&lt;/p&gt;
+
+
+            </description>
+            <pubDate>Sat, 20 Feb 2021 00:00:00 +0000</pubDate>
+            <guid>
+                https://pedropinto.me/the-git-guide-i-wish-i-had
+            </guid>
+        </item>
         
         <item>
             <title>The penguin is not ready to go home yet</title>
